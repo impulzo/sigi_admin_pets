@@ -28,6 +28,11 @@ class CustomerController extends VoyagerBaseController
 
 	public function store(Request $request)
 	{
+		$request = $request->merge(['full_name' => $request->first_name.' '.$request->last_name]);
+		return parent::store($request);
+	}
+	/*public function store(Request $request)
+	{
 		try {
 			$dto = new LogErrorDto();
 
@@ -55,7 +60,7 @@ class CustomerController extends VoyagerBaseController
 			$this->logError($dto, $ex->getType());
 			return $this->respondInternalError($ex->getMessage());
 		}
-	}
+	}*/
 
 	public function update(Request $request, $id)
 	{
