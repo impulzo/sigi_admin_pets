@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorTheme": "Dracula Theme Soft",
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     "editor.fontLigatures": false,
 	"files.insertFinalNewline": true,
