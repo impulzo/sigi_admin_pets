@@ -22,7 +22,7 @@ jobs:
           node-version: "18.17.1" # Ajusta la versión de Node.js según tus necesidades
 
       - name: Install Node.js dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Run JavaScript linter
         run: npm run lint
