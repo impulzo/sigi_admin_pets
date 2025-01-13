@@ -26,6 +26,7 @@ class CreatePetsTable extends Migration
 			$table->string('necklace_details')->nullable();
 			$table->boolean('is_aggressive');
 			$table->string('is_aggressive_details')->nullable();
+			$table->string('photo')->nullable();
             $table->timestamps();
         });
     }

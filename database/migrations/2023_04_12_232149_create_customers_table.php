@@ -25,7 +25,7 @@ class CreateCustomersTable extends Migration
             $table->string('reason', 100)->nullable();
             $table->string('email', 80)->nullable();
             $table->string('postal_code', 10)->nullable();;
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
