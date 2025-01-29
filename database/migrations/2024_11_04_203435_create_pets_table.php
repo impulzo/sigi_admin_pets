@@ -17,7 +17,7 @@ class CreatePetsTable extends Migration
             $table->id();
 			$table->integer('customer_id');
 			$table->string('name');
-            $table->string('birthdate');
+            $table->date('birthdate');
             $table->string('race');
 			$table->string('sex');
 			$table->string('food')->nullable();
