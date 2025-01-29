@@ -2032,7 +2032,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"validation":{"rule":"max:20","messages":{"max":"El campo :attribute acepta maximo :max."}}}',
+                'details' => '{"validation":{"rule":"max:60","messages":{"max":"El campo :attribute acepta maximo :max."}}}',
                 'order' => 6,
             ),
             126 => 
