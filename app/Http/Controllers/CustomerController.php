@@ -28,33 +28,8 @@ class CustomerController extends VoyagerBaseController
 
 	public function store(Request $request)
 	{
-		try {
-			$dto = new LogErrorDto();
-
-			$jsonData = json_decode($request->getContent());
-			$this->storeService->run($jsonData);
-
-			$company = Setting::find(1);
-			$data = [
-				'name' => $request->first_name . ' ' . $request->last_name,
-				'company' => $company->value,
-				'user' => $request->user,
-				'password' => $request->password
-			];
-
-			$mail = new Mail();
-			$mail->send([$request->user], 'CREDENCIALES DE ACCESO', view('mail.credentials', $data)->render());
-
-			return $this->respondMessage('Datos guardados con éxito');
-		} catch (ServiceException $ex) {
-			$dto->url = $request->path();
-			$dto->description = "STORE";
-			$dto->request = json_encode($request->json);
-			$dto->response = $ex->getMessage();
-			$dto->status = 500;
-			$this->logError($dto, $ex->getType());
-			return $this->respondInternalError($ex->getMessage());
-		}
+		$request = $request->merge(['full_name' => $request->first_name.' '.$request->last_name]);
+		return parent::store($request);
 	}
 
 	public function update(Request $request, $id)

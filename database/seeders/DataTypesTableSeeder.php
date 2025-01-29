@@ -14,12 +14,12 @@ class DataTypesTableSeeder extends Seeder
      */
     public function run()
     {
-
+        
 
         \DB::table('data_types')->delete();
-
+        
         \DB::table('data_types')->insert(array (
-            0 =>
+            0 => 
             array (
                 'id' => 1,
                 'name' => 'users',
@@ -37,7 +37,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2022-11-09 13:18:29',
                 'updated_at' => '2024-04-01 15:14:14',
             ),
-            1 =>
+            1 => 
             array (
                 'id' => 2,
                 'name' => 'menus',
@@ -55,7 +55,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2022-11-09 13:18:29',
                 'updated_at' => '2022-11-09 13:18:29',
             ),
-            2 =>
+            2 => 
             array (
                 'id' => 3,
                 'name' => 'roles',
@@ -71,9 +71,9 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":"roles"}',
                 'created_at' => '2022-11-09 13:18:29',
-                'updated_at' => '2022-11-09 14:02:45',
+                'updated_at' => '2024-12-04 18:38:23',
             ),
-            3 =>
+            3 => 
             array (
                 'id' => 4,
                 'name' => 'transfer_data',
@@ -91,7 +91,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-04-02 19:26:05',
                 'updated_at' => '2023-04-02 19:47:35',
             ),
-            4 =>
+            4 => 
             array (
                 'id' => 5,
                 'name' => 'modules',
@@ -109,7 +109,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-04-02 19:53:08',
                 'updated_at' => '2023-04-02 19:53:54',
             ),
-            5 =>
+            5 => 
             array (
                 'id' => 6,
                 'name' => 'payment_methods',
@@ -125,9 +125,9 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-04-02 19:58:31',
-                'updated_at' => '2023-04-02 20:02:47',
+                'updated_at' => '2024-12-04 18:37:25',
             ),
-            6 =>
+            6 => 
             array (
                 'id' => 7,
                 'name' => 'categories',
@@ -145,7 +145,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-04-09 21:15:08',
                 'updated_at' => '2023-04-09 21:16:08',
             ),
-            7 =>
+            7 => 
             array (
                 'id' => 8,
                 'name' => 'offices',
@@ -163,7 +163,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-04-09 21:18:07',
                 'updated_at' => '2023-04-09 21:18:07',
             ),
-            8 =>
+            8 => 
             array (
                 'id' => 9,
                 'name' => 'units',
@@ -181,7 +181,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-04-09 21:19:51',
                 'updated_at' => '2023-04-09 21:19:51',
             ),
-            9 =>
+            9 => 
             array (
                 'id' => 10,
                 'name' => 'products',
@@ -199,7 +199,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-04-09 21:27:15',
                 'updated_at' => '2023-04-09 22:10:39',
             ),
-            10 =>
+            10 => 
             array (
                 'id' => 11,
                 'name' => 'movement_types',
@@ -217,7 +217,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-04-09 21:31:57',
                 'updated_at' => '2023-04-09 21:31:57',
             ),
-            11 =>
+            11 => 
             array (
                 'id' => 12,
                 'name' => 'inventories',
@@ -235,7 +235,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-04-09 21:40:15',
                 'updated_at' => '2023-04-12 21:15:01',
             ),
-            12 =>
+            12 => 
             array (
                 'id' => 13,
                 'name' => 'customers',
@@ -251,9 +251,9 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-04-12 23:37:46',
-                'updated_at' => '2023-04-13 21:42:58',
+                'updated_at' => '2024-12-24 18:50:21',
             ),
-            13 =>
+            13 => 
             array (
                 'id' => 14,
                 'name' => 'whatsapp_templates',
@@ -271,8 +271,170 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2023-05-18 11:01:23',
                 'updated_at' => '2023-05-18 11:17:18',
             ),
+            14 => 
+            array (
+                'id' => 18,
+                'name' => 'pets',
+                'slug' => 'pets',
+                'display_name_singular' => 'Mascota',
+                'display_name_plural' => 'Mascotas',
+                'icon' => 'voyager-paw',
+                'model_name' => 'App\\Models\\Pet',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2024-11-04 21:09:10',
+                'updated_at' => '2025-01-28 19:53:16',
+            ),
+            15 => 
+            array (
+                'id' => 19,
+                'name' => 'services',
+                'slug' => 'services',
+                'display_name_singular' => 'Servicio',
+                'display_name_plural' => 'Servicios',
+                'icon' => 'voyager-hammer',
+                'model_name' => 'App\\Models\\Service',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2024-11-04 21:15:49',
+                'updated_at' => '2024-12-06 20:36:58',
+            ),
+            16 => 
+            array (
+                'id' => 21,
+                'name' => 'expenses',
+                'slug' => 'expenses',
+                'display_name_singular' => 'Gasto',
+                'display_name_plural' => 'Gastos',
+                'icon' => 'voyager-double-down',
+                'model_name' => 'App\\Models\\Expense',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2024-11-06 17:49:22',
+                'updated_at' => '2024-12-04 18:36:24',
+            ),
+            17 => 
+            array (
+                'id' => 22,
+                'name' => 'dates',
+                'slug' => 'dates',
+                'display_name_singular' => 'Cita',
+                'display_name_plural' => 'Citas',
+                'icon' => 'voyager-tag',
+                'model_name' => 'App\\Models\\Date',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2024-11-06 17:55:08',
+                'updated_at' => '2024-12-04 18:35:23',
+            ),
+            18 => 
+            array (
+                'id' => 23,
+                'name' => 'cash_audits',
+                'slug' => 'cash-audits',
+                'display_name_singular' => 'Corte de caja',
+                'display_name_plural' => 'Cortes de caja',
+                'icon' => 'voyager-pie-chart',
+                'model_name' => 'App\\Models\\CashAudit',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2024-11-06 18:00:20',
+                'updated_at' => '2024-12-24 17:24:53',
+            ),
+            19 => 
+            array (
+                'id' => 26,
+                'name' => 'receipts',
+                'slug' => 'receipts',
+                'display_name_singular' => 'Recibo',
+                'display_name_plural' => 'Recibos',
+                'icon' => 'voyager-double-up',
+                'model_name' => 'App\\Models\\Receipt',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2024-11-06 18:07:09',
+                'updated_at' => '2024-12-04 18:38:07',
+            ),
+            20 => 
+            array (
+                'id' => 29,
+                'name' => 'calendars',
+                'slug' => 'calendars',
+                'display_name_singular' => 'Calendario',
+                'display_name_plural' => 'Calendarios',
+                'icon' => 'voyager-calendar',
+                'model_name' => 'App\\Models\\Calendar',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2024-11-06 18:18:07',
+                'updated_at' => '2024-11-27 18:09:16',
+            ),
+            21 => 
+            array (
+                'id' => 31,
+                'name' => 'medical_histories',
+                'slug' => 'medical-histories',
+                'display_name_singular' => 'Historial médico',
+                'display_name_plural' => 'Historiales médicos',
+                'icon' => 'voyager-activity',
+                'model_name' => 'App\\Models\\MedicalHistory',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2024-11-06 18:29:14',
+                'updated_at' => '2024-12-24 17:25:29',
+            ),
+            22 => 
+            array (
+                'id' => 33,
+                'name' => 'vaccines',
+                'slug' => 'vaccines',
+                'display_name_singular' => 'Vacuna',
+                'display_name_plural' => 'Vacunas',
+                'icon' => 'voyager-file-text',
+                'model_name' => 'App\\Models\\Vaccine',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2024-11-06 18:39:44',
+                'updated_at' => '2024-12-06 20:42:19',
+            ),
         ));
-
-
+        
+        
     }
 }

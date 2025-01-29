@@ -739,6 +739,411 @@ class PermissionsTableSeeder extends Seeder
                 'created_at' => '2023-05-18 11:01:23',
                 'updated_at' => '2023-05-18 11:01:23',
             ),
+            80 => 
+            array (
+                'id' => 81,
+                'key' => 'browse_pets',
+                'table_name' => 'pets',
+                'display_name' => 'mascotas',
+                'created_at' => '2024-11-04 21:09:10',
+                'updated_at' => '2024-11-04 21:09:10',
+            ),
+            81 => 
+            array (
+                'id' => 82,
+                'key' => 'read_pets',
+                'table_name' => 'pets',
+                'display_name' => 'mascotas',
+                'created_at' => '2024-11-04 21:09:10',
+                'updated_at' => '2024-11-04 21:09:10',
+            ),
+            82 => 
+            array (
+                'id' => 83,
+                'key' => 'edit_pets',
+                'table_name' => 'pets',
+                'display_name' => 'mascotas',
+                'created_at' => '2024-11-04 21:09:10',
+                'updated_at' => '2024-11-04 21:09:10',
+            ),
+            83 => 
+            array (
+                'id' => 84,
+                'key' => 'add_pets',
+                'table_name' => 'pets',
+                'display_name' => 'mascotas',
+                'created_at' => '2024-11-04 21:09:10',
+                'updated_at' => '2024-11-04 21:09:10',
+            ),
+            84 => 
+            array (
+                'id' => 85,
+                'key' => 'delete_pets',
+                'table_name' => 'pets',
+                'display_name' => 'mascotas',
+                'created_at' => '2024-11-04 21:09:10',
+                'updated_at' => '2024-11-04 21:09:10',
+            ),
+            85 => 
+            array (
+                'id' => 86,
+                'key' => 'browse_services',
+                'table_name' => 'services',
+                'display_name' => 'servicios',
+                'created_at' => '2024-11-04 21:15:49',
+                'updated_at' => '2024-11-04 21:15:49',
+            ),
+            86 => 
+            array (
+                'id' => 87,
+                'key' => 'read_services',
+                'table_name' => 'services',
+                'display_name' => 'servicios',
+                'created_at' => '2024-11-04 21:15:49',
+                'updated_at' => '2024-11-04 21:15:49',
+            ),
+            87 => 
+            array (
+                'id' => 88,
+                'key' => 'edit_services',
+                'table_name' => 'services',
+                'display_name' => 'servicios',
+                'created_at' => '2024-11-04 21:15:49',
+                'updated_at' => '2024-11-04 21:15:49',
+            ),
+            88 => 
+            array (
+                'id' => 89,
+                'key' => 'add_services',
+                'table_name' => 'services',
+                'display_name' => 'servicios',
+                'created_at' => '2024-11-04 21:15:49',
+                'updated_at' => '2024-11-04 21:15:49',
+            ),
+            89 => 
+            array (
+                'id' => 90,
+                'key' => 'delete_services',
+                'table_name' => 'services',
+                'display_name' => 'servicios',
+                'created_at' => '2024-11-04 21:15:49',
+                'updated_at' => '2024-11-04 21:15:49',
+            ),
+            90 => 
+            array (
+                'id' => 91,
+                'key' => 'browse_expenses',
+                'table_name' => 'expenses',
+                'display_name' => 'gastos',
+                'created_at' => '2024-11-06 17:49:22',
+                'updated_at' => '2024-11-06 17:49:22',
+            ),
+            91 => 
+            array (
+                'id' => 92,
+                'key' => 'read_expenses',
+                'table_name' => 'expenses',
+                'display_name' => 'gastos',
+                'created_at' => '2024-11-06 17:49:22',
+                'updated_at' => '2024-11-06 17:49:22',
+            ),
+            92 => 
+            array (
+                'id' => 93,
+                'key' => 'edit_expenses',
+                'table_name' => 'expenses',
+                'display_name' => 'gastos',
+                'created_at' => '2024-11-06 17:49:22',
+                'updated_at' => '2024-11-06 17:49:22',
+            ),
+            93 => 
+            array (
+                'id' => 94,
+                'key' => 'add_expenses',
+                'table_name' => 'expenses',
+                'display_name' => 'gastos',
+                'created_at' => '2024-11-06 17:49:22',
+                'updated_at' => '2024-11-06 17:49:22',
+            ),
+            94 => 
+            array (
+                'id' => 95,
+                'key' => 'delete_expenses',
+                'table_name' => 'expenses',
+                'display_name' => 'gastos',
+                'created_at' => '2024-11-06 17:49:22',
+                'updated_at' => '2024-11-06 17:49:22',
+            ),
+            95 => 
+            array (
+                'id' => 96,
+                'key' => 'browse_dates',
+                'table_name' => 'dates',
+                'display_name' => 'citas',
+                'created_at' => '2024-11-06 17:55:08',
+                'updated_at' => '2024-11-06 17:55:08',
+            ),
+            96 => 
+            array (
+                'id' => 97,
+                'key' => 'read_dates',
+                'table_name' => 'dates',
+                'display_name' => 'citas',
+                'created_at' => '2024-11-06 17:55:08',
+                'updated_at' => '2024-11-06 17:55:08',
+            ),
+            97 => 
+            array (
+                'id' => 98,
+                'key' => 'edit_dates',
+                'table_name' => 'dates',
+                'display_name' => 'citas',
+                'created_at' => '2024-11-06 17:55:08',
+                'updated_at' => '2024-11-06 17:55:08',
+            ),
+            98 => 
+            array (
+                'id' => 99,
+                'key' => 'add_dates',
+                'table_name' => 'dates',
+                'display_name' => 'citas',
+                'created_at' => '2024-11-06 17:55:08',
+                'updated_at' => '2024-11-06 17:55:08',
+            ),
+            99 => 
+            array (
+                'id' => 100,
+                'key' => 'delete_dates',
+                'table_name' => 'dates',
+                'display_name' => 'citas',
+                'created_at' => '2024-11-06 17:55:08',
+                'updated_at' => '2024-11-06 17:55:08',
+            ),
+            100 => 
+            array (
+                'id' => 101,
+                'key' => 'browse_cash_audits',
+                'table_name' => 'cash_audits',
+                'display_name' => 'cortes de caja',
+                'created_at' => '2024-11-06 18:00:20',
+                'updated_at' => '2024-11-06 18:00:20',
+            ),
+            101 => 
+            array (
+                'id' => 102,
+                'key' => 'read_cash_audits',
+                'table_name' => 'cash_audits',
+                'display_name' => 'cortes de caja',
+                'created_at' => '2024-11-06 18:00:20',
+                'updated_at' => '2024-11-06 18:00:20',
+            ),
+            102 => 
+            array (
+                'id' => 103,
+                'key' => 'edit_cash_audits',
+                'table_name' => 'cash_audits',
+                'display_name' => 'cortes de caja',
+                'created_at' => '2024-11-06 18:00:20',
+                'updated_at' => '2024-11-06 18:00:20',
+            ),
+            103 => 
+            array (
+                'id' => 104,
+                'key' => 'add_cash_audits',
+                'table_name' => 'cash_audits',
+                'display_name' => 'cortes de caja',
+                'created_at' => '2024-11-06 18:00:20',
+                'updated_at' => '2024-11-06 18:00:20',
+            ),
+            104 => 
+            array (
+                'id' => 105,
+                'key' => 'delete_cash_audits',
+                'table_name' => 'cash_audits',
+                'display_name' => 'cortes de caja',
+                'created_at' => '2024-11-06 18:00:20',
+                'updated_at' => '2024-11-06 18:00:20',
+            ),
+            105 => 
+            array (
+                'id' => 106,
+                'key' => 'browse_receipts',
+                'table_name' => 'receipts',
+                'display_name' => 'recibos',
+                'created_at' => '2024-11-06 18:07:09',
+                'updated_at' => '2024-11-06 18:07:09',
+            ),
+            106 => 
+            array (
+                'id' => 107,
+                'key' => 'read_receipts',
+                'table_name' => 'receipts',
+                'display_name' => 'recibos',
+                'created_at' => '2024-11-06 18:07:09',
+                'updated_at' => '2024-11-06 18:07:09',
+            ),
+            107 => 
+            array (
+                'id' => 108,
+                'key' => 'edit_receipts',
+                'table_name' => 'receipts',
+                'display_name' => 'recibos',
+                'created_at' => '2024-11-06 18:07:09',
+                'updated_at' => '2024-11-06 18:07:09',
+            ),
+            108 => 
+            array (
+                'id' => 109,
+                'key' => 'add_receipts',
+                'table_name' => 'receipts',
+                'display_name' => 'recibos',
+                'created_at' => '2024-11-06 18:07:09',
+                'updated_at' => '2024-11-06 18:07:09',
+            ),
+            109 => 
+            array (
+                'id' => 110,
+                'key' => 'delete_receipts',
+                'table_name' => 'receipts',
+                'display_name' => 'recibos',
+                'created_at' => '2024-11-06 18:07:09',
+                'updated_at' => '2024-11-06 18:07:09',
+            ),
+            110 => 
+            array (
+                'id' => 111,
+                'key' => 'browse_calendars',
+                'table_name' => 'calendars',
+                'display_name' => 'calendarios',
+                'created_at' => '2024-11-06 18:18:07',
+                'updated_at' => '2024-11-06 18:18:07',
+            ),
+            111 => 
+            array (
+                'id' => 112,
+                'key' => 'read_calendars',
+                'table_name' => 'calendars',
+                'display_name' => 'calendarios',
+                'created_at' => '2024-11-06 18:18:07',
+                'updated_at' => '2024-11-06 18:18:07',
+            ),
+            112 => 
+            array (
+                'id' => 113,
+                'key' => 'edit_calendars',
+                'table_name' => 'calendars',
+                'display_name' => 'calendarios',
+                'created_at' => '2024-11-06 18:18:07',
+                'updated_at' => '2024-11-06 18:18:07',
+            ),
+            113 => 
+            array (
+                'id' => 114,
+                'key' => 'add_calendars',
+                'table_name' => 'calendars',
+                'display_name' => 'calendarios',
+                'created_at' => '2024-11-06 18:18:07',
+                'updated_at' => '2024-11-06 18:18:07',
+            ),
+            114 => 
+            array (
+                'id' => 115,
+                'key' => 'delete_calendars',
+                'table_name' => 'calendars',
+                'display_name' => 'calendarios',
+                'created_at' => '2024-11-06 18:18:07',
+                'updated_at' => '2024-11-06 18:18:07',
+            ),
+            115 => 
+            array (
+                'id' => 116,
+                'key' => 'browse_medical_histories',
+                'table_name' => 'medical_histories',
+                'display_name' => 'historial medico',
+                'created_at' => '2024-11-06 18:29:14',
+                'updated_at' => '2024-11-06 18:29:14',
+            ),
+            116 => 
+            array (
+                'id' => 117,
+                'key' => 'read_medical_histories',
+                'table_name' => 'medical_histories',
+                'display_name' => 'historial medico',
+                'created_at' => '2024-11-06 18:29:14',
+                'updated_at' => '2024-11-06 18:29:14',
+            ),
+            117 => 
+            array (
+                'id' => 118,
+                'key' => 'edit_medical_histories',
+                'table_name' => 'medical_histories',
+                'display_name' => 'historial medico',
+                'created_at' => '2024-11-06 18:29:14',
+                'updated_at' => '2024-11-06 18:29:14',
+            ),
+            118 => 
+            array (
+                'id' => 119,
+                'key' => 'add_medical_histories',
+                'table_name' => 'medical_histories',
+                'display_name' => 'historial medico',
+                'created_at' => '2024-11-06 18:29:14',
+                'updated_at' => '2024-11-06 18:29:14',
+            ),
+            119 => 
+            array (
+                'id' => 120,
+                'key' => 'delete_medical_histories',
+                'table_name' => 'medical_histories',
+                'display_name' => 'historial medico',
+                'created_at' => '2024-11-06 18:29:14',
+                'updated_at' => '2024-11-06 18:29:14',
+            ),
+            120 => 
+            array (
+                'id' => 121,
+                'key' => 'browse_vaccines',
+                'table_name' => 'vaccines',
+                'display_name' => 'vacunas',
+                'created_at' => '2024-11-06 18:39:44',
+                'updated_at' => '2024-11-06 18:39:44',
+            ),
+            121 => 
+            array (
+                'id' => 122,
+                'key' => 'read_vaccines',
+                'table_name' => 'vaccines',
+                'display_name' => 'vacunas',
+                'created_at' => '2024-11-06 18:39:44',
+                'updated_at' => '2024-11-06 18:39:44',
+            ),
+            122 => 
+            array (
+                'id' => 123,
+                'key' => 'edit_vaccines',
+                'table_name' => 'vaccines',
+                'display_name' => 'vacunas',
+                'created_at' => '2024-11-06 18:39:44',
+                'updated_at' => '2024-11-06 18:39:44',
+            ),
+            123 => 
+            array (
+                'id' => 124,
+                'key' => 'add_vaccines',
+                'table_name' => 'vaccines',
+                'display_name' => 'vacunas',
+                'created_at' => '2024-11-06 18:39:44',
+                'updated_at' => '2024-11-06 18:39:44',
+            ),
+            124 => 
+            array (
+                'id' => 125,
+                'key' => 'delete_vaccines',
+                'table_name' => 'vaccines',
+                'display_name' => 'vacunas',
+                'created_at' => '2024-11-06 18:39:44',
+                'updated_at' => '2024-11-06 18:39:44',
+            ),
         ));
         
         
