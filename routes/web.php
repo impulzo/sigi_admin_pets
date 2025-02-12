@@ -17,7 +17,10 @@ use App\Http\Controllers\MainController;
 |
 */
 
-Route::get('/{any}', [MainController::class, 'index'])->where('any', '^(?!admin).*$');
+// Route::get('/{any}', [MainController::class, 'index'])->where('any', '^(?!admin).*$');
+Route::get('/',function(){
+	return redirect('/admin');
+});
 
 
 Route::group(['prefix' => 'admin'], function () {
