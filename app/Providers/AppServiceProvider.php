@@ -25,5 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Voyager::addAction(\App\Actions\HistoryButton::class);
+		Voyager::addAction(\App\Actions\MedicalHistoryButton::class);
+		Voyager::addAction(\App\Actions\VaccineButton::class);
     }
 }
