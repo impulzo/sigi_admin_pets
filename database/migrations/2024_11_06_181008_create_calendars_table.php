@@ -17,7 +17,7 @@ class CreateCalendarsTable extends Migration
             $table->id();
 			$table->integer('customer_id');
 			$table->integer('user_id');
-			$table->integer('reservation_date');
+			$table->string('reservation_date');
 			$table->string('entry_date');
 			$table->string('departure_date');
 			$table->string('receipt_id');
