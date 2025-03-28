@@ -413,7 +413,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'medical-histories',
-                'updated_at' => '2025-03-23 15:37:01',
+                'updated_at' => '2025-03-26 16:53:38',
             ),
             22 => 
             array (
@@ -431,7 +431,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'vaccines',
-                'updated_at' => '2025-03-23 16:36:31',
+                'updated_at' => '2025-03-26 19:06:49',
             ),
         ));
         

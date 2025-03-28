@@ -7,6 +7,9 @@
         <i class="voyager-book"></i>
         Historial Médico
     </h1>
+	<a href="{{ route('voyager.medical-histories.create') }}" class="btn btn-success">
+    <i class="voyager-plus"></i> Crear
+	</a>
     @include('voyager::multilingual.language-selector')
 @stop
 
