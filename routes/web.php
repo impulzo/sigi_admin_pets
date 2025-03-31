@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\PetController;
+use App\Http\Controllers\MedicalHistoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
@@ -17,7 +19,10 @@ use App\Http\Controllers\MainController;
 |
 */
 
-Route::get('/{any}', [MainController::class, 'index'])->where('any', '^(?!admin).*$');
+// Route::get('/{any}', [MainController::class, 'index'])->where('any', '^(?!admin).*$');
+Route::get('/',function(){
+	return redirect('/admin');
+});
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -25,6 +30,12 @@ Route::group(['prefix' => 'admin'], function () {
     //inventory
     Route::get('/inventories/{id}/history', [InventoryController::class, 'historyByInventory'])
         ->name('inventories.history');
+	// pet
+	Route::get('/pets/{id}/medicalhistory', [PetController::class, 'medicalhistoryByPet'])
+        ->name('pets.medicalhistory');
+	Route::get('medicalhistory/{id}/vaccine', [MedicalHistoryController::class, 'vaccineByMedicalHistory'])
+        ->name('medicalhistories.vaccine');
+
 });
 
 Auth::routes();

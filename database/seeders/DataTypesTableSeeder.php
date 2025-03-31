@@ -281,13 +281,13 @@ class DataTypesTableSeeder extends Seeder
                 'icon' => 'voyager-paw',
                 'model_name' => 'App\\Models\\Pet',
                 'policy_name' => NULL,
-                'controller' => NULL,
+                'controller' => 'App\\Http\\Controllers\\PetController',
                 'description' => NULL,
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-04 21:09:10',
-                'updated_at' => '2025-01-28 19:53:16',
+                'updated_at' => '2025-03-23 15:33:12',
             ),
             15 => 
             array (
@@ -305,7 +305,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-04 21:15:49',
-                'updated_at' => '2024-12-06 20:36:58',
+                'updated_at' => '2025-02-11 21:44:09',
             ),
             16 => 
             array (
@@ -317,13 +317,13 @@ class DataTypesTableSeeder extends Seeder
                 'icon' => 'voyager-double-down',
                 'model_name' => 'App\\Models\\Expense',
                 'policy_name' => NULL,
-                'controller' => NULL,
+                'controller' => 'App\\Http\\Controllers\\ExpenseController',
                 'description' => NULL,
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 17:49:22',
-                'updated_at' => '2024-12-04 18:36:24',
+                'updated_at' => '2025-03-31 15:59:28',
             ),
             17 => 
             array (
@@ -335,13 +335,13 @@ class DataTypesTableSeeder extends Seeder
                 'icon' => 'voyager-tag',
                 'model_name' => 'App\\Models\\Date',
                 'policy_name' => NULL,
-                'controller' => NULL,
+                'controller' => 'App\\Http\\Controllers\\DateController',
                 'description' => NULL,
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 17:55:08',
-                'updated_at' => '2024-12-04 18:35:23',
+                'updated_at' => '2025-03-31 15:58:12',
             ),
             18 => 
             array (
@@ -353,13 +353,13 @@ class DataTypesTableSeeder extends Seeder
                 'icon' => 'voyager-pie-chart',
                 'model_name' => 'App\\Models\\CashAudit',
                 'policy_name' => NULL,
-                'controller' => NULL,
+                'controller' => 'App\\Http\\Controllers\\CashAuditController',
                 'description' => NULL,
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 18:00:20',
-                'updated_at' => '2024-12-24 17:24:53',
+                'updated_at' => '2025-03-31 15:56:52',
             ),
             19 => 
             array (
@@ -371,13 +371,13 @@ class DataTypesTableSeeder extends Seeder
                 'icon' => 'voyager-double-up',
                 'model_name' => 'App\\Models\\Receipt',
                 'policy_name' => NULL,
-                'controller' => NULL,
+                'controller' => 'App\\Http\\Controllers\\ReceiptController',
                 'description' => NULL,
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 18:07:09',
-                'updated_at' => '2024-12-04 18:38:07',
+                'updated_at' => '2025-03-31 16:00:16',
             ),
             20 => 
             array (
@@ -389,13 +389,13 @@ class DataTypesTableSeeder extends Seeder
                 'icon' => 'voyager-calendar',
                 'model_name' => 'App\\Models\\Calendar',
                 'policy_name' => NULL,
-                'controller' => NULL,
+                'controller' => 'App\\Http\\Controllers\\CalendarController',
                 'description' => NULL,
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 18:18:07',
-                'updated_at' => '2024-11-27 18:09:16',
+                'updated_at' => '2025-03-27 17:26:58',
             ),
             21 => 
             array (
@@ -407,13 +407,13 @@ class DataTypesTableSeeder extends Seeder
                 'icon' => 'voyager-activity',
                 'model_name' => 'App\\Models\\MedicalHistory',
                 'policy_name' => NULL,
-                'controller' => NULL,
+                'controller' => 'App\\Http\\Controllers\\MedicalHistoryController',
                 'description' => NULL,
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 18:29:14',
-                'updated_at' => '2024-12-24 17:25:29',
+                'updated_at' => '2025-03-27 16:03:01',
             ),
             22 => 
             array (
@@ -431,7 +431,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 18:39:44',
-                'updated_at' => '2024-12-06 20:42:19',
+                'updated_at' => '2025-03-27 16:04:18',
             ),
         ));
         
