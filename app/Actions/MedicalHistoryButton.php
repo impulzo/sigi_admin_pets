@@ -8,7 +8,7 @@ class MedicalHistoryButton extends AbstractAction
 {
     public function getTitle()
     {
-        return 'Historial Medico';
+        return 'Historial Médico';
     }
 
     public function getIcon()

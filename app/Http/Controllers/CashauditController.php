@@ -9,7 +9,7 @@ use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 use App\Traits\LogErrorTrait;
 
 
-class Cash_auditController extends VoyagerBaseController
+class CashauditController extends VoyagerBaseController
 {
 	public function store(Request $request)
 	{
