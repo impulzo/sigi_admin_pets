@@ -353,13 +353,13 @@ class DataTypesTableSeeder extends Seeder
                 'icon' => 'voyager-pie-chart',
                 'model_name' => 'App\\Models\\CashAudit',
                 'policy_name' => NULL,
-                'controller' => 'App\\Http\\Controllers\\Cash_auditController',
+                'controller' => 'App\\Http\\Controllers\\CashauditController',
                 'description' => NULL,
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 18:00:20',
-                'updated_at' => '2025-03-27 17:32:53',
+                'updated_at' => '2025-03-31 15:44:09',
             ),
             19 => 
             array (
