@@ -323,7 +323,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 17:49:22',
-                'updated_at' => '2025-03-27 17:39:02',
+                'updated_at' => '2025-03-31 15:59:28',
             ),
             17 => 
             array (
@@ -341,7 +341,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 17:55:08',
-                'updated_at' => '2025-03-27 18:36:36',
+                'updated_at' => '2025-03-31 15:58:12',
             ),
             18 => 
             array (
@@ -353,13 +353,13 @@ class DataTypesTableSeeder extends Seeder
                 'icon' => 'voyager-pie-chart',
                 'model_name' => 'App\\Models\\CashAudit',
                 'policy_name' => NULL,
-                'controller' => 'App\\Http\\Controllers\\CashauditController',
+                'controller' => 'App\\Http\\Controllers\\CashAuditController',
                 'description' => NULL,
                 'generate_permissions' => 1,
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 18:00:20',
-                'updated_at' => '2025-03-31 15:44:09',
+                'updated_at' => '2025-03-31 15:56:52',
             ),
             19 => 
             array (
@@ -377,7 +377,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 18:07:09',
-                'updated_at' => '2025-03-27 17:31:59',
+                'updated_at' => '2025-03-31 16:00:16',
             ),
             20 => 
             array (
