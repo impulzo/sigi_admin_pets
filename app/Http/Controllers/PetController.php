@@ -37,4 +37,5 @@ class PetController extends VoyagerBaseController
 			return view('vendor.voyager.pets.medicalhistory', compact('data'));
 		}
 	}
+
 }

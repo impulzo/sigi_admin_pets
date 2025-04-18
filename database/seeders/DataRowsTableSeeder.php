@@ -80,7 +80,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 0,
-                'details' => '{}',
+                'details' => '{"validation":{"rule":"required","messages":{"required":"El campo :attribute es requerido."}}}',
                 'order' => 4,
             ),
             4 => 
@@ -1930,7 +1930,7 @@ class DataRowsTableSeeder extends Seeder
                 'field' => 'status',
                 'type' => 'text',
                 'display_name' => 'Status',
-                'required' => 1,
+                'required' => 0,
                 'browse' => 1,
                 'read' => 1,
                 'edit' => 1,
