@@ -110,10 +110,24 @@
 
 				</div>
 
-
 				<div class="col-md-12" style="display: flex; gap: 20px; margin-top: 15px;">
 					<label class="control-label">Dieta</label>
 					<input type="text" class="form-control" type="text" name="food" placeholder="Dieta" value=""></input>
+				</div>
+
+				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
+						<label class="control-label">Num. De paseos por semana</label>
+						<input type="text" class="form-control" type="number" name="walk" placeholder="Num. De paseos por semana" min="0" value=""></input>
+				</div>
+
+				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
+						<label class="control-label">Num. De paseos en la mañana</label>
+						<input type="text" class="form-control" type="number" name="morning" placeholder="Num. De paseos en la mañana" min="0" value=""></input>
+				</div>
+
+				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
+						<label class="control-label">Num. De paseos en la tarde</label>
+						<input type="text" class="form-control" type="number" name="afternoon" placeholder="Num. De paseos en la tarde" min="0" value=""></input>
 				</div>
 
 			</div>
@@ -132,6 +146,18 @@
 					<div  class="col-md-12" style="display: flex; margin-top: 15px;">
 						<label class="control-label" for="name">Cumpleaños</label>
 						<input type="date" class="form-control" name="birthdate">
+					</div>
+					<div  class="col-md-12" style="display: flex; margin-top: 15px;">
+						<label class="control-label" for="name">Fecha de admisión</label>
+						<input type="date" class="form-control" name="admission_date">
+					</div>
+					<div  class="col-md-12" style="display: flex; gap: 10px; margin-top: 15px;">
+						<label class="control-label" for="name">Lugar que ocupa en casa</label>
+						<input required="" type="text" class="form-control" name="house_place" placeholder="¿Donde duerme?" value="">
+					</div>
+					<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
+						<label class="control-label">¿Con cuantas personas vive?</label>
+						<input type="number" class="form-control"  name="housemates" placeholder="¿Con cuantas personas vive?" min="0" value=""></input>
 					</div>
 			</div>
 
@@ -152,6 +178,20 @@
 						<input type="file" class="form-control-file col-md-12" id="imagen" name="photo" accept="image/*">
 				</div>
 
+				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
+					<label class="control-label">Horario de comida: Mañana</label>
+					<input type="time" class="form-control"  name="other_morning" placeholder="Horario de comida: Mañana" min="0" value=""></input>
+				</div>
+
+				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
+					<label class="control-label">Horario de comida: Tarde</label>
+					<input type="time" class="form-control" name="other_afternoon" placeholder="Horario de comida: Tarde" min="0" value=""></input>
+				</div>
+
+				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
+					<label class="control-label">Horario de comida: Noche</label>
+					<input type="time" class="form-control" name="night" placeholder="Horario de comida: Noche" min="0" value=""></input>
+				</div>
 		</div>
 
 			<div class="col-md-12 " style="display: flex; gap: 8px; margin-top: 15px;">
@@ -180,7 +220,7 @@
 
 			</div>
 
-		<div  class="col-md-12 " style="display: flex; gap: 8px;">
+		<div  class="col-md-12 " style="display: flex; gap: 8px; margin-top: 5px;">
 
 			<div  class="col-md-4" style="display: flex; gap: 20px;">
 
@@ -202,9 +242,9 @@
 			<div class="col-md-8" style="display: flex; gap: 60px;">
 					<label class="control-label">Especificar</label>
 					<input type="text" class="form-control" type="text" name="necklace_details" placeholder="Color, tamaño, adorno..." value=""></input>
-				</div>
+			</div>
 		</div>
-		<div  class="col-md-12 " style="display: flex; gap: 8px;">
+		<div  class="col-md-12 " style="display: flex; gap: 8px; margin-top: 5px;">
 
 			<div  class="col-md-4" style="display: flex; gap: 20px;">
 
@@ -226,9 +266,9 @@
 			<div class="col-md-8" style="display: flex; gap: 60px;">
 					<label class="control-label">Especificar</label>
 					<input type="text" class="form-control" type="text" name="allergy_details" placeholder="Si es alérgico" value=""></input>
-				</div>
 			</div>
-		<div  class="col-md-12 " style="display: flex; gap: 8px;">
+			</div>
+		<div  class="col-md-12 " style="display: flex; gap: 8px; margin-top: 15px;">
 
 			<div  class="col-md-4" style="display: flex; gap: 20px;">
 
@@ -250,9 +290,9 @@
 			<div class="col-md-8" style="display: flex; gap: 60px;">
 					<label class="control-label">Especificar</label>
 					<input type="text" class="form-control" type="text" name="fracture_details" placeholder="Si tiene alguna" value=""></input>
-				</div>
+			</div>
 		</div>
-		<div  class="col-md-12 " style="display: flex; gap: 8px;">
+		<div  class="col-md-12 " style="display: flex; gap: 8px; margin-top: 15px;">
 
 			<div  class="col-md-4" style="display: flex; gap: 20px;">
 
@@ -274,9 +314,9 @@
 			<div class="col-md-8" style="display: flex; gap: 60px;">
 					<label class="control-label">Especificar</label>
 					<input type="text" class="form-control" type="text" name="scar_details" placeholder="Forma, tamaño, dolor..." value=""></input>
-				</div>
+			</div>
 		</div>
-		<div  class="col-md-12 " style="display: flex; gap: 8px;">
+		<div  class="col-md-12 " style="display: flex; gap: 8px; margin-top: 15px;">
 
 			<div  class="col-md-4" style="display: flex; gap: 20px;">
 
@@ -298,7 +338,77 @@
 			<div class="col-md-8" style="display: flex; gap: 60px;">
 					<label class="control-label">Especificar</label>
 					<input type="text" class="form-control" type="text" name="hospitalization_details" placeholder="Si ha sufrido" value=""></input>
-				</div>
+			</div>
+		</div>
+
+		<div  class="col-md-12 " style="display: flex; gap: 8px; margin-top: 15px;">
+
+			<div  class="col-md-4" style="display: flex; gap: 20px;">
+
+				<label class="control-label" for="name">¿Ha estado en algun curso de entrenamiento?</label>
+
+					<ul class="radio" style="display: flex;" >
+							<li>
+								<input type="radio"  id="option-training-yes" name="training" checked="">
+								<label for="option-training-yes">Si</label>
+								<div class="check"></div>
+							</li>
+							<li>
+								<input type="radio" id="option-training-no" name="training">
+								<label for="option-training-no">No</label>
+								<div class="check"></div>
+							</li>
+					</ul>
+			</div>
+			<div class="col-md-8" style="display: flex; gap: 60px;">
+					<label class="control-label">Especificar</label>
+					<input type="text" class="form-control" type="text" name="training_details" placeholder="¿Cuál?" value=""></input>
+			</div>
+		</div>
+
+		<div class="col-md-12" style="display: flex; gap: 10px; margin-top: 20px;">
+			<div class="col-md-6" style="display: flex; flex-direction: column;">
+				<label class="control-label">Reglas de convivencia dentro de casa</label>
+				<textarea class="form-control" name="indoor" rows="3" placeholder="Reglas de convivencia dentro de casa"></textarea>
+			</div>
+
+			<div class="col-md-6" style="display: flex; flex-direction: column;">
+				<label class="control-label">Reglas de convivencia fuera de casa</label>
+				<textarea class="form-control" name="outdoor" rows="3" placeholder="Reglas de convivencia fuera de casa"></textarea>
+			</div>
+		</div>
+
+		<div class="col-md-12" style="display: flex; gap: 10px; margin-top: 20px;">
+			<div  class="col-md-4" style="display: flex; gap: 8px;">
+				<label for="name">¿Cómo llegó a casa?</label>
+				<select class="form-control" name="arrive" id="arrive">
+					<option value="">Seleccione</option>
+					<option value="comprado">Comprado</option>
+					<option value="adopcion">Adopción</option>
+					<option value="regalo">Regalo</option>
+					<option value="crianza">Crianza</option>
+				</select>
+			</div>
+
+			<div  class="col-md-4" style="display: flex; gap: 8px;">
+				<label for="name">Conducta con perros</label>
+				<select class="form-control" name="behavior_dogs" id="behavior_dogs">
+					<option value="">Seleccione</option>
+					<option value="buena">Buena</option>
+					<option value="regular">Regular</option>
+					<option value="mala">Malo</option>
+				</select>
+			</div>
+
+			<div  class="col-md-4" style="display: flex; gap: 8px;">
+				<label for="name">Conducta con personas</label>
+				<select class="form-control" name="behavior_people" id="behavior_people">
+					<option value="">Seleccione</option>
+					<option value="buena">Buena</option>
+					<option value="regular">Regular</option>
+					<option value="mala">Malo</option>
+				</select>
+			</div>
 		</div>
 </div>
 

@@ -68,13 +68,39 @@ class DashboardController extends VoyagerBaseController
 			$petdata = $request->only([
 				'name',
 				'food',
+				'walk',
+				'morning',
+				'afternoon',
 				'race',
 				'weight',
 				'birthdate',
+				'admission_date',
+				'house_place',
+				'housemates',
 				'sex',
 				'photo',
+				'other_morning',
+				'other_afternoon',
+				'night',
+				'is_aggressive',
+				'necklace',
 				'is_aggressive_details',
-				'necklace_details'
+				'necklace_details',
+				'allergy',
+				'allergy_details',
+				'fracture',
+				'fracture_details',
+				'scar',
+				'scar_details',
+				'hospitalization',
+				'hospitalization_details',
+				'training',
+				'training_details',
+				'indoor',
+				'outdoor',
+				'arrive',
+				'behavior_dogs',
+				'behavior_people'
 			]);
 
 			$receiptdata = $request->only([
@@ -84,10 +110,14 @@ class DashboardController extends VoyagerBaseController
 				'concept',
 				'date',
 			]);
-
+			dd($petdata);
 			$petdata['is_aggressive'] = $request->has('is_aggressive') ? 1 : 0;
 			$petdata['necklace'] = $request->has('necklace') ? 1 : 0;
-
+			$petdata['allergy'] = $request->has('allergy') ? 1 : 0;
+			$petdata['fracture'] = $request->has('fracture') ? 1 : 0;
+			$petdata['scar'] = $request->has('scar') ? 1 : 0;
+			$petdata['hospitalization'] = $request->has('hospitalization') ? 1 : 0;
+			$petdata['training'] = $request->has('training') ? 1 : 0;
 
 			$customerdata['full_name'] = $customerdata['first_name'] . ' ' . $customerdata['last_name'];
 			$customer = Customer::create($customerdata);
@@ -99,6 +129,7 @@ class DashboardController extends VoyagerBaseController
 			$receiptdata['user_id'] = auth()->id();
 			$receipt = Receipt::create($receiptdata);
 
+			dd($petdata);
 			return redirect()->route("voyager.dashboard")->with($data);
 		}
 
