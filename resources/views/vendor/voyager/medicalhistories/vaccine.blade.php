@@ -35,7 +35,7 @@
                                 <tbody>
                                     @foreach ($data as $item)
                                         <tr>
-                                            <td>{{ $item-date }}</td>
+                                            <td>{{ $item->date }}</td>
                                             <td>{{ $item->details }}</td>
 											<td>
 												@if($item->photo)

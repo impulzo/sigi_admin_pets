@@ -12,7 +12,7 @@ class Role extends \TCG\Voyager\Models\Role
     public function scopeRoles($query)
     {
 
-		return $query->where('name', '<>', 'support')->where('name', '<>', 'root');
+		// return $query->where('name', '<>', 'support')->where('name', '<>', 'root');
 
     }
 }
