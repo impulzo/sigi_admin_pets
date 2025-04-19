@@ -17,7 +17,7 @@ class CreateDatesTable extends Migration
             $table->id();
 			$table->integer('customer_id');
 			$table->integer('user_id');
-			$table->string('date_time');
+			$table->time('date_time');
 			$table->integer('service_id');
 			$table->string('details');
             $table->timestamps();

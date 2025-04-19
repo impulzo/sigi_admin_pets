@@ -52,11 +52,11 @@
 
 					<div  class="col-md-12" style="display: flex; gap: 10px;">
 						<label class="control-label" for="name">Num. Teléfono</label>
-						<input required="" type="text" class="form-control" name="phone" placeholder="Num. Teléfono" value="">
+						<input required="" type="number" class="form-control" name="phone" placeholder="Num. Teléfono" value="">
 					</div>
 					<div  class="col-md-12" style="display: flex; gap: 10px;">
 						<label class="control-label" for="name">Código postal</label>
-						<input type="text" class="form-control" name="postal_code" placeholder="Código postal" value="">
+						<input type="number" class="form-control" name="postal_code" placeholder="Código postal" value="">
 					</div>
 			</div>
 
@@ -66,8 +66,8 @@
 				<label for="name">Seleccione su género</label>
 			<select class="form-control" name="gender" id="gender">
 				<option value="">Seleccione</option>
-				<option value="Masculino">Masculino</option>
-				<option value="Femenino">Femenino</option>
+				<option value="masculino">Masculino</option>
+				<option value="femenino">Femenino</option>
 
 			</select>
 
@@ -117,17 +117,17 @@
 
 				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
 						<label class="control-label">Num. De paseos por semana</label>
-						<input type="text" class="form-control" type="number" name="walk" placeholder="Num. De paseos por semana" min="0" value=""></input>
+						<input class="form-control" type="number" name="walk" placeholder="Num. De paseos por semana" min="0" value=""></input>
 				</div>
 
 				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
 						<label class="control-label">Num. De paseos en la mañana</label>
-						<input type="text" class="form-control" type="number" name="morning" placeholder="Num. De paseos en la mañana" min="0" value=""></input>
+						<input class="form-control" type="number" name="morning" placeholder="Num. De paseos en la mañana" min="0" value=""></input>
 				</div>
 
 				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
 						<label class="control-label">Num. De paseos en la tarde</label>
-						<input type="text" class="form-control" type="number" name="afternoon" placeholder="Num. De paseos en la tarde" min="0" value=""></input>
+						<input class="form-control" type="number" name="afternoon" placeholder="Num. De paseos en la tarde" min="0" value=""></input>
 				</div>
 
 			</div>
@@ -168,8 +168,8 @@
 					<label for="name">Seleccione el sexo de su mascota</label>
 					<select class="form-control" name="sex" id="sex">
 						<option value="">Seleccione</option>
-						<option value="Masculino">Masculino</option>
-						<option value="Femenino">Femenino</option>
+						<option value="masculino">Masculino</option>
+						<option value="femenino">Femenino</option>
 					</select>
 				</div>
 
@@ -449,7 +449,7 @@
 
 					<div  class="col-md-12" style="display: flex; gap: 10px; margin-top: 15px;">
 						<label class="control-label" for="name">Monto</label>
-						<input required="" type="text" class="form-control" name="amount" placeholder="Monto" value="">
+						<input required="" type="number" class="form-control" name="amount" placeholder="Monto" value="">
 					</div>
 
 					<div  class="col-md-12" style="display: flex; gap: 10px; margin-top: 15px;">

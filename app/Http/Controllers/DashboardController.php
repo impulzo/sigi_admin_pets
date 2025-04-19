@@ -110,7 +110,6 @@ class DashboardController extends VoyagerBaseController
 				'concept',
 				'date',
 			]);
-			dd($petdata);
 			$petdata['is_aggressive'] = $request->has('is_aggressive') ? 1 : 0;
 			$petdata['necklace'] = $request->has('necklace') ? 1 : 0;
 			$petdata['allergy'] = $request->has('allergy') ? 1 : 0;
@@ -129,7 +128,6 @@ class DashboardController extends VoyagerBaseController
 			$receiptdata['user_id'] = auth()->id();
 			$receipt = Receipt::create($receiptdata);
 
-			dd($petdata);
 			return redirect()->route("voyager.dashboard")->with($data);
 		}
 
