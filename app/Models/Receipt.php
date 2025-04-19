@@ -14,9 +14,15 @@ class Receipt extends Model
 		'service_id',
 		'payment_method_id',
 		'amount',
-		'concept',
+		'service_unit',
 		'date',
 		'customer_id',
 
 	];
+
+	public function service()
+	{
+		return $this->belongsTo(Service::class);
+	}
+
 }
