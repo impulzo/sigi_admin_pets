@@ -479,8 +479,8 @@ class MenuItemsTableSeeder extends Seeder
                 'parent_id' => NULL,
                 'route' => 'voyager.receipts.index',
                 'target' => '_self',
-                'title' => 'Recibos',
-                'updated_at' => '2025-03-23 16:47:23',
+                'title' => 'Ventas',
+                'updated_at' => '2025-04-18 23:29:34',
                 'url' => '',
             ),
             29 => 

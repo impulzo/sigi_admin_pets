@@ -130,6 +130,11 @@
 						<input class="form-control" type="number" name="afternoon" placeholder="Num. De paseos en la tarde" min="0" value=""></input>
 				</div>
 
+				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
+						<label class="control-label">Médico actual</label>
+						<input class="form-control" type="text" name="medic" placeholder="¿Quién atiente?" min="0" value=""></input>
+				</div>
+
 			</div>
 
 
@@ -408,6 +413,18 @@
 					<option value="regular">Regular</option>
 					<option value="mala">Malo</option>
 				</select>
+			</div>
+		</div>
+
+		<div class="col-md-12" style="display: flex; gap: 10px; margin-top: 20px;">
+			<div class="col-md-6" style="display: flex; flex-direction: column;">
+				<label class="control-label">Observaciones</label>
+				<textarea class="form-control" name="observation" rows="3" placeholder="Observaciones"></textarea>
+			</div>
+
+			<div class="col-md-6" style="display: flex; flex-direction: column;">
+				<label class="control-label">Recomendaciones</label>
+				<textarea class="form-control" name="recommendation" rows="3" placeholder="Recomendaciones"></textarea>
 			</div>
 		</div>
 </div>

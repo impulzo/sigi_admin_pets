@@ -100,7 +100,10 @@ class DashboardController extends VoyagerBaseController
 				'outdoor',
 				'arrive',
 				'behavior_dogs',
-				'behavior_people'
+				'behavior_people',
+				'observation',
+				'recommendation',
+				'medic',
 			]);
 
 			$receiptdata = $request->only([

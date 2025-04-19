@@ -44,7 +44,10 @@ class Pet extends Model
 		'outdoor',
 		'arrive',
 		'behavior_dogs',
-		'behavior_people'
+		'behavior_people',
+		'observation',
+		'recommendation',
+		'medic',
 
 	];
 	public function client()

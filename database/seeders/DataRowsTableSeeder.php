@@ -2678,38 +2678,6 @@ class DataRowsTableSeeder extends Seeder
             166 => 
             array (
                 'add' => 1,
-                'browse' => 1,
-                'data_type_id' => 26,
-                'delete' => 1,
-                'details' => '{"validation":{"rule":"max:6","messages":{"max":"El campo :attribute solo acepta un numero maximo de caracteres de  :max."}}}',
-                'display_name' => 'Monto',
-                'edit' => 1,
-                'field' => 'amount',
-                'id' => 169,
-                'order' => 5,
-                'read' => 1,
-                'required' => 1,
-                'type' => 'number',
-            ),
-            167 => 
-            array (
-                'add' => 1,
-                'browse' => 1,
-                'data_type_id' => 26,
-                'delete' => 1,
-                'details' => '{"validation":{"rule":"max:25","messages":{"max":"El campo :attribute acepta maximo :max."}}}',
-                'display_name' => 'Concepto',
-                'edit' => 1,
-                'field' => 'concept',
-                'id' => 170,
-                'order' => 6,
-                'read' => 1,
-                'required' => 1,
-                'type' => 'text',
-            ),
-            168 => 
-            array (
-                'add' => 1,
                 'browse' => 0,
                 'data_type_id' => 26,
                 'delete' => 1,
@@ -2723,7 +2691,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'text',
             ),
-            169 => 
+            167 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -2739,10 +2707,10 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'number',
             ),
-            170 => 
+            168 => 
             array (
                 'add' => 0,
-                'browse' => 1,
+                'browse' => 0,
                 'data_type_id' => 26,
                 'delete' => 1,
                 'details' => '{}',
@@ -2755,7 +2723,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            171 => 
+            169 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -2771,7 +2739,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            172 => 
+            170 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -2787,7 +2755,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'number',
             ),
-            173 => 
+            171 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -2803,7 +2771,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'number',
             ),
-            174 => 
+            172 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -2819,7 +2787,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'date',
             ),
-            175 => 
+            173 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -2835,7 +2803,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'date',
             ),
-            176 => 
+            174 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -2851,7 +2819,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'date',
             ),
-            177 => 
+            175 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -2867,7 +2835,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'number',
             ),
-            178 => 
+            176 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -2883,7 +2851,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            179 => 
+            177 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -2899,7 +2867,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            180 => 
+            178 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -2915,7 +2883,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'text',
             ),
-            181 => 
+            179 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -2931,7 +2899,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'number',
             ),
-            182 => 
+            180 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -2947,7 +2915,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'text_area',
             ),
-            183 => 
+            181 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -2963,7 +2931,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'date',
             ),
-            184 => 
+            182 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -2979,7 +2947,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'text_area',
             ),
-            185 => 
+            183 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -2995,7 +2963,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'text_area',
             ),
-            186 => 
+            184 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3011,7 +2979,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'text_area',
             ),
-            187 => 
+            185 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3027,7 +2995,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'text_area',
             ),
-            188 => 
+            186 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -3043,7 +3011,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            189 => 
+            187 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -3059,7 +3027,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            190 => 
+            188 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3075,7 +3043,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            191 => 
+            189 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3091,7 +3059,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            192 => 
+            190 => 
             array (
                 'add' => 0,
                 'browse' => 1,
@@ -3107,7 +3075,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'relationship',
             ),
-            193 => 
+            191 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -3123,7 +3091,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            194 => 
+            192 => 
             array (
                 'add' => 0,
                 'browse' => 1,
@@ -3139,7 +3107,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'relationship',
             ),
-            195 => 
+            193 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3155,7 +3123,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            196 => 
+            194 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3171,7 +3139,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            197 => 
+            195 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3187,7 +3155,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            198 => 
+            196 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3203,7 +3171,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            199 => 
+            197 => 
             array (
                 'add' => 0,
                 'browse' => 1,
@@ -3219,7 +3187,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'relationship',
             ),
-            200 => 
+            198 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3235,7 +3203,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            201 => 
+            199 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3251,7 +3219,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            202 => 
+            200 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3267,7 +3235,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            203 => 
+            201 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3283,7 +3251,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'text',
             ),
-            204 => 
+            202 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3299,7 +3267,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'number',
             ),
-            205 => 
+            203 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3315,7 +3283,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'number',
             ),
-            206 => 
+            204 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3331,7 +3299,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'image',
             ),
-            207 => 
+            205 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3347,7 +3315,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'relationship',
             ),
-            208 => 
+            206 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3363,7 +3331,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            209 => 
+            207 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3379,7 +3347,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'number',
             ),
-            210 => 
+            208 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -3395,7 +3363,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'text',
             ),
-            211 => 
+            209 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3411,7 +3379,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'number',
             ),
-            212 => 
+            210 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3427,7 +3395,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'date',
             ),
-            213 => 
+            211 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3443,7 +3411,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'text_area',
             ),
-            214 => 
+            212 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3459,7 +3427,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'image',
             ),
-            215 => 
+            213 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -3475,7 +3443,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            216 => 
+            214 => 
             array (
                 'add' => 0,
                 'browse' => 0,
@@ -3491,7 +3459,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'timestamp',
             ),
-            217 => 
+            215 => 
             array (
                 'add' => 1,
                 'browse' => 1,
@@ -3507,7 +3475,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'relationship',
             ),
-            218 => 
+            216 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3523,7 +3491,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'date',
             ),
-            219 => 
+            217 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3539,7 +3507,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'number',
             ),
-            220 => 
+            218 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3555,7 +3523,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'number',
             ),
-            221 => 
+            219 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3571,7 +3539,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'number',
             ),
-            222 => 
+            220 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3587,7 +3555,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'time',
             ),
-            223 => 
+            221 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3603,7 +3571,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'time',
             ),
-            224 => 
+            222 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3619,7 +3587,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'time',
             ),
-            225 => 
+            223 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3635,7 +3603,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'text',
             ),
-            226 => 
+            224 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3651,7 +3619,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'number',
             ),
-            227 => 
+            225 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3667,7 +3635,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'text_area',
             ),
-            228 => 
+            226 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3683,7 +3651,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'text_area',
             ),
-            229 => 
+            227 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3699,7 +3667,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'radio_btn',
             ),
-            230 => 
+            228 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3715,7 +3683,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'text_area',
             ),
-            231 => 
+            229 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3731,7 +3699,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'radio_btn',
             ),
-            232 => 
+            230 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3747,7 +3715,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'text_area',
             ),
-            233 => 
+            231 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3763,7 +3731,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'radio_btn',
             ),
-            234 => 
+            232 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3779,7 +3747,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'text_area',
             ),
-            235 => 
+            233 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3795,7 +3763,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'radio_btn',
             ),
-            236 => 
+            234 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3811,7 +3779,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'text_area',
             ),
-            237 => 
+            235 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3827,7 +3795,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 1,
                 'type' => 'radio_btn',
             ),
-            238 => 
+            236 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3843,7 +3811,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'text_area',
             ),
-            239 => 
+            237 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3859,7 +3827,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'select_dropdown',
             ),
-            240 => 
+            238 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3875,7 +3843,7 @@ class DataRowsTableSeeder extends Seeder
                 'required' => 0,
                 'type' => 'select_dropdown',
             ),
-            241 => 
+            239 => 
             array (
                 'add' => 1,
                 'browse' => 0,
@@ -3890,6 +3858,86 @@ class DataRowsTableSeeder extends Seeder
                 'read' => 1,
                 'required' => 0,
                 'type' => 'select_dropdown',
+            ),
+            240 => 
+            array (
+                'add' => 1,
+                'browse' => 1,
+                'data_type_id' => 18,
+                'delete' => 1,
+                'details' => '{"validation":{"rule":"max:250","messages":{"max":"El campo :attribute acepta maximo :max."}}}',
+                'display_name' => 'Obervaciones',
+                'edit' => 1,
+                'field' => 'observation',
+                'id' => 263,
+                'order' => 40,
+                'read' => 1,
+                'required' => 0,
+                'type' => 'text_area',
+            ),
+            241 => 
+            array (
+                'add' => 1,
+                'browse' => 1,
+                'data_type_id' => 18,
+                'delete' => 1,
+                'details' => '{"validation":{"rule":"max:250","messages":{"max":"El campo :attribute acepta maximo :max."}}}',
+                'display_name' => 'Recomendaciones',
+                'edit' => 1,
+                'field' => 'recommendation',
+                'id' => 264,
+                'order' => 41,
+                'read' => 1,
+                'required' => 0,
+                'type' => 'text_area',
+            ),
+            242 => 
+            array (
+                'add' => 1,
+                'browse' => 1,
+                'data_type_id' => 18,
+                'delete' => 1,
+                'details' => '{"validation":{"rule":"max:50","messages":{"max":"El campo :attribute acepta maximo :max."}}}',
+                'display_name' => 'Médico actual',
+                'edit' => 1,
+                'field' => 'medic',
+                'id' => 265,
+                'order' => 42,
+                'read' => 1,
+                'required' => 0,
+                'type' => 'text',
+            ),
+            243 => 
+            array (
+                'add' => 1,
+                'browse' => 1,
+                'data_type_id' => 26,
+                'delete' => 1,
+                'details' => '{}',
+                'display_name' => 'Unidad de servicio',
+                'edit' => 1,
+                'field' => 'service_unit',
+                'id' => 266,
+                'order' => 5,
+                'read' => 1,
+                'required' => 1,
+                'type' => 'number',
+            ),
+            244 => 
+            array (
+                'add' => 1,
+                'browse' => 1,
+                'data_type_id' => 26,
+                'delete' => 1,
+                'details' => '{}',
+                'display_name' => 'Monto',
+                'edit' => 1,
+                'field' => 'amount',
+                'id' => 267,
+                'order' => 10,
+                'read' => 1,
+                'required' => 0,
+                'type' => 'hidden',
             ),
         ));
         

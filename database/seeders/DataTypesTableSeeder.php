@@ -287,7 +287,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'pets',
-                'updated_at' => '2025-04-18 21:38:20',
+                'updated_at' => '2025-04-18 23:27:03',
             ),
             15 => 
             array (
@@ -367,8 +367,8 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2024-11-06 18:07:09',
                 'description' => NULL,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
-                'display_name_plural' => 'Recibos',
-                'display_name_singular' => 'Recibo',
+                'display_name_plural' => 'Ventas',
+                'display_name_singular' => 'Venta',
                 'generate_permissions' => 1,
                 'icon' => 'voyager-double-up',
                 'id' => 26,
@@ -377,7 +377,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'receipts',
-                'updated_at' => '2025-03-31 16:00:16',
+                'updated_at' => '2025-04-19 00:16:42',
             ),
             20 => 
             array (

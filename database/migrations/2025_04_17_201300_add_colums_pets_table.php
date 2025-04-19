@@ -38,6 +38,9 @@ class AddColumsPetsTable extends Migration
 			$table->string('arrive')->nullable();
 			$table->string('behavior_dogs')->nullable();
             $table->string('behavior_people')->nullable();
+			$table->string('observation')->nullable();
+			$table->string('recommendation')->nullable();
+            $table->string('medic')->nullable();
         });
     }
 
