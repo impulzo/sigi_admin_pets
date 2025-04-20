@@ -109,8 +109,7 @@ class DashboardController extends VoyagerBaseController
 			$receiptdata = $request->only([
 				'service_id',
 				'payment_method_id',
-				'amount',
-				'concept',
+				'service_unit',
 				'date',
 			]);
 			$petdata['is_aggressive'] = $request->has('is_aggressive') ? 1 : 0;
@@ -120,7 +119,6 @@ class DashboardController extends VoyagerBaseController
 			$petdata['scar'] = $request->has('scar') ? 1 : 0;
 			$petdata['hospitalization'] = $request->has('hospitalization') ? 1 : 0;
 			$petdata['training'] = $request->has('training') ? 1 : 0;
-
 			$customerdata['full_name'] = $customerdata['first_name'] . ' ' . $customerdata['last_name'];
 			$customer = Customer::create($customerdata);
 
