@@ -251,7 +251,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2023-04-12 23:37:46',
-                'updated_at' => '2024-12-24 18:50:21',
+                'updated_at' => '2025-04-19 21:50:38',
             ),
             13 => 
             array (
@@ -287,7 +287,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-04 21:09:10',
-                'updated_at' => '2025-04-19 17:27:25',
+                'updated_at' => '2025-04-19 22:00:14',
             ),
             15 => 
             array (
@@ -323,7 +323,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 17:49:22',
-                'updated_at' => '2025-03-31 15:59:28',
+                'updated_at' => '2025-04-19 21:59:21',
             ),
             17 => 
             array (
@@ -341,7 +341,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 17:55:08',
-                'updated_at' => '2025-03-31 15:58:12',
+                'updated_at' => '2025-04-19 21:57:51',
             ),
             18 => 
             array (
@@ -359,7 +359,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 18:00:20',
-                'updated_at' => '2025-03-31 15:56:52',
+                'updated_at' => '2025-04-19 21:58:58',
             ),
             19 => 
             array (
@@ -377,7 +377,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 18:07:09',
-                'updated_at' => '2025-04-19 19:33:16',
+                'updated_at' => '2025-04-19 22:01:46',
             ),
             20 => 
             array (
@@ -395,7 +395,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 18:18:07',
-                'updated_at' => '2025-03-27 17:26:58',
+                'updated_at' => '2025-04-19 21:58:41',
             ),
             21 => 
             array (
@@ -413,7 +413,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2024-11-06 18:29:14',
-                'updated_at' => '2025-03-27 16:03:01',
+                'updated_at' => '2025-04-19 21:59:42',
             ),
             22 => 
             array (
@@ -431,7 +431,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2025-04-18 20:11:13',
-                'updated_at' => '2025-04-18 20:17:09',
+                'updated_at' => '2025-04-19 22:02:12',
             ),
         ));
         

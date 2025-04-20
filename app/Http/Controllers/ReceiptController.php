@@ -12,16 +12,6 @@ use App\Models\Service;
 
 class ReceiptController extends VoyagerBaseController
 {
-	public function index(Request $request)
-	{
-		$services = Service::all();
-        $value = Receipt::with('service')->get()->pluck('service.cost');
-
-
-        return view('vendor.voyager.receipt', compact(
-            'services',
-        ));
-	}
 
 	public function store(Request $request)
 	{
