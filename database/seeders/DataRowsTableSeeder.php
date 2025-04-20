@@ -3939,6 +3939,38 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 10,
             ),
+            245 => 
+            array (
+                'id' => 268,
+                'data_type_id' => 26,
+                'field' => 'receipt_belongsto_pet_relationship',
+                'type' => 'relationship',
+                'display_name' => 'pets',
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"model":"App\\\\Models\\\\Pet","table":"pets","type":"belongsTo","column":"pet_id","key":"id","label":"name","pivot_table":"calendars","pivot":"0","taggable":"0"}',
+                'order' => 15,
+            ),
+            246 => 
+            array (
+                'id' => 269,
+                'data_type_id' => 26,
+                'field' => 'pet_id',
+                'type' => 'text',
+                'display_name' => 'Pet Id',
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{}',
+                'order' => 11,
+            ),
         ));
         
         

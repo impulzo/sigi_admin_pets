@@ -17,6 +17,7 @@ class Receipt extends Model
 		'service_unit',
 		'date',
 		'customer_id',
+		'pet_id',
 
 	];
 
