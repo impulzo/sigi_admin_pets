@@ -158,7 +158,7 @@
 					</div>
 					<div  class="col-md-12" style="display: flex; gap: 10px; margin-top: 15px;">
 						<label class="control-label" for="name">Lugar que ocupa en casa</label>
-						<input required="" type="text" class="form-control" name="house_place" placeholder="¿Donde duerme?" value="">
+						<input type="text" class="form-control" name="house_place" placeholder="¿Donde duerme?" value="">
 					</div>
 					<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
 						<label class="control-label">¿Con cuantas personas vive?</label>

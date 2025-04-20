@@ -3945,7 +3945,7 @@ class DataRowsTableSeeder extends Seeder
                 'data_type_id' => 26,
                 'field' => 'receipt_belongsto_pet_relationship',
                 'type' => 'relationship',
-                'display_name' => 'pets',
+                'display_name' => 'Mascota',
                 'required' => 1,
                 'browse' => 1,
                 'read' => 1,
