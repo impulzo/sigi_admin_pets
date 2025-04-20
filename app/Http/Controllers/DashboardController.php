@@ -29,20 +29,113 @@ class DashboardController extends VoyagerBaseController
 			'customers', 'pets', 'payment_methods','services'
 		));
 	}
+
 	public function store(Request $request)
 	{
+		dd($request->all()['is_aggressive']);
 		$data = [];
+		$customerData = [];
+		$customerId = 0;
+		$petData = [];
+		$petId = 0;
+		$receiptData = [];
 		try {
-			$dto = new LogErrorDto();
-
-			$jsonData = (object) $request->all();
-			$this->storeService->run($jsonData);
-
 			$data =  [
-				'message'    => "Informacion actualizada con éxito",
+				'message'    => "Informacion guardada con éxito",
 				'alert-type' => 'success',
 			];
+
+			// Si el cliente no existe, se crea
+			if($request->all()['customer_id'] == null){
+				$customerData = $request->only([
+					'first_name',
+					'last_name',
+					'address',
+					'phone',
+					'postal_code',
+					'gender',
+					'email'
+				]);
+				$customerData['full_name'] = $customerData['first_name'] . ' ' . $customerData['last_name'];
+				$customer = Customer::create($customerData);
+				$customerId = $customer->id;
+			} else {
+				$customerId = $request->all()['customer_id'];
+			}
+
+			// Si el perro no existe, se crea
+			if(request->all()['pet_id'] == null){
+				$petData = $request->only([
+					'name',
+					'food',
+					'walk',
+					'morning',
+					'afternoon',
+					'race',
+					'weight',
+					'birthdate',
+					'admission_date',
+					'house_place',
+					'housemates',
+					'sex',
+					'photo',
+					'other_morning',
+					'other_afternoon',
+					'night',
+					'is_aggressive',
+					'necklace',
+					'is_aggressive_details',
+					'necklace_details',
+					'allergy',
+					'allergy_details',
+					'fracture',
+					'fracture_details',
+					'scar',
+					'scar_details',
+					'hospitalization',
+					'hospitalization_details',
+					'training',
+					'training_details',
+					'indoor',
+					'outdoor',
+					'arrive',
+					'behavior_dogs',
+					'behavior_people',
+					'observation',
+					'recommendation',
+					'medic',
+				]);
+				$petData['is_aggressive'] = intval($request->all()['is_aggressive']);
+				$petData['necklace'] = intval($request->all()['necklace']);
+				$petData['allergy'] = intval($request->all()['allergy']);
+				$petData['fracture'] = intval($request->all()['fracture']);
+				$petData['scar'] = intval($request->all()['scar']);
+				$petData['hospitalization'] = intval($request->all()['hospitalization']);
+				$petData['training'] = intval($request->all()['training']);
+				$petData['customer_id'] = $customerId;
+				$pet = Pet::create($petData);
+				$petId = $pet->id;
+			} else {
+				$petId = $request->all()['pet_id'];
+			}
+
+
+			$receiptData = $request->only([
+				'service_id',
+				'payment_method_id',
+				'amount',
+				'concept',
+				'date',
+			]);
+
+
+
+			$receiptData['customer_id'] = $customerId;
+			$receiptData['user_id'] = auth()->id();
+			$receipt = Receipt::create($receiptData);
+
 		} catch (ServiceException $ex) {
+			$dto = new LogErrorDto();
 			$dto->url = $request->path();
 			$dto->description = "STORE";
 			$dto->request = json_encode($request->json);
@@ -53,84 +146,7 @@ class DashboardController extends VoyagerBaseController
 				'message'    => $ex->getMessage(),
 				'alert-type' => 'error',
 			];
-
 		} finally {
-			$customerdata = $request->only([
-				'first_name',
-				'last_name',
-				'address',
-				'phone',
-				'postal_code',
-				'gender',
-				'email'
-			]);
-
-			$petdata = $request->only([
-				'name',
-				'food',
-				'walk',
-				'morning',
-				'afternoon',
-				'race',
-				'weight',
-				'birthdate',
-				'admission_date',
-				'house_place',
-				'housemates',
-				'sex',
-				'photo',
-				'other_morning',
-				'other_afternoon',
-				'night',
-				'is_aggressive',
-				'necklace',
-				'is_aggressive_details',
-				'necklace_details',
-				'allergy',
-				'allergy_details',
-				'fracture',
-				'fracture_details',
-				'scar',
-				'scar_details',
-				'hospitalization',
-				'hospitalization_details',
-				'training',
-				'training_details',
-				'indoor',
-				'outdoor',
-				'arrive',
-				'behavior_dogs',
-				'behavior_people',
-				'observation',
-				'recommendation',
-				'medic',
-			]);
-
-			$receiptdata = $request->only([
-				'service_id',
-				'payment_method_id',
-				'amount',
-				'concept',
-				'date',
-			]);
-			$petdata['is_aggressive'] = $request->has('is_aggressive') ? 1 : 0;
-			$petdata['necklace'] = $request->has('necklace') ? 1 : 0;
-			$petdata['allergy'] = $request->has('allergy') ? 1 : 0;
-			$petdata['fracture'] = $request->has('fracture') ? 1 : 0;
-			$petdata['scar'] = $request->has('scar') ? 1 : 0;
-			$petdata['hospitalization'] = $request->has('hospitalization') ? 1 : 0;
-			$petdata['training'] = $request->has('training') ? 1 : 0;
-
-			$customerdata['full_name'] = $customerdata['first_name'] . ' ' . $customerdata['last_name'];
-			$customer = Customer::create($customerdata);
-
-			$petdata['customer_id'] = $customer->id;
-			$pet = Pet::create($petdata);
-
-			$receiptdata['customer_id'] = $customer->id;
-			$receiptdata['user_id'] = auth()->id();
-			$receipt = Receipt::create($receiptdata);
-
 			return redirect()->route("voyager.dashboard")->with($data);
 		}
 
