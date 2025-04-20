@@ -1,90 +1,124 @@
 @extends('voyager::master')
 
 @section('content')
-<form action="{{ route('voyager.dashboard.store') }}" method="POST" class="container-fluid" style="display: flex; flex-direction: column;">
+<style>
+    .page-title {
+        color: #ea7b23 !important;
+    }
+    .page-title i {
+        color: #ea7b23 !important;
+    }
+    .control-label {
+        color: #000 !important;
+        font-weight: bold !important;
+    }
+    label {
+        color: #000 !important;
+        font-weight: bold !important;
+    }
+    .radio-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+    }
+    .radio {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+    .radio li {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .radio input[type="radio"] {
+        margin: 0;
+    }
+    .radio label {
+        margin: 0;
+        font-weight: normal;
+    }
+</style>
+<form action="{{ route('voyager.dashboard.store') }}" method="POST" class="container-fluid">
 @csrf
-
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 <!-- CLIENTE -->
-
-	<h1 class="page-title">
+<div id="customer">
+ 	<h1 class="page-title col-md-12">
         <i class="voyager-people"></i>
         Añadir Cliente
     </h1>
-	<div class="col-md-4" style=" gap: 8px; margin-bottom: 15px;">
-			<label for="customer_id">Seleccione el cliente</label>
-			<select class="form-control" name="customer_id" id="customer_id">
+	<div class="col-md-7" style="gap: 8px; margin-bottom: 15px;">
+		<div style="display: flex; gap: 10px;">
+			<label for="customer_id" style="margin-top: 10px;">Seleccione el cliente</label>
+			<select class="form-control" name="customer_id" id="customer_id" style="margin-top: 10px;">
 				<option value="">Seleccione</option>
-				@foreach ($customers as $customer)
-				<option value="{{ $customer->id }}">{{ $customer->full_name }}</option>
+				@foreach ($customers as $client)
+					<option value="{{ $client->id }}" {{ isset($customer) && $client->id == $customer->id ? 'selected' : '' }}>{{ $client->full_name }}</option>
 				@endforeach
 			</select>
+			<button class="btn btn-primary" name="action" value="search_customer">Buscar cliente</button>
+		</div>
 	</div>
 
-		<div style="gap: 8px;">
-
-
-
-			<div class="col-md-4" style=" gap: 8px;" >
-
-				<div class="col-md-12" style="display: flex; gap: 10px;">
-
-					<label class="control-label">Nombre (s)</label>
-					<input required type="text" class="form-control" name="first_name" placeholder="Nombre (s)" value=""></input>
-
-				</div>
-
-				<div class="col-md-12" style="display: flex; gap: 10px;">
-					<label class="control-label">Apellidos</label>
-					<input required type="text" class="form-control" type="text" name="last_name" placeholder="Apellidos" value=""></input>
-				</div>
-
-				<div class="col-md-12" style="display: flex; gap: 10px; margin-top: 15px;">
-					<label class="control-label">Dirección</label>
-					<input required type="text" class="form-control" type="text" name="address" placeholder="Dirección" value=""></input>
-				</div>
-
-
-
+	<div style="gap: 8px;" class="col-md-12">
+		<div class="row" style=" gap: 8px;" >
+			<div class="col-md-4" style="display: flex; gap: 10px;">
+				<label class="control-label">Nombre (s)</label>
+				<input type="text" class="form-control" name="first_name" placeholder="Nombre (s)" value="{{ isset($customer) ? $customer->first_name : '' }}">
 			</div>
-
-			<div class="col-md-3 " style="">
-
-					<div  class="col-md-12" style="display: flex; gap: 10px;">
-						<label class="control-label" for="name">Num. Teléfono</label>
-						<input required="" type="number" class="form-control" name="phone" placeholder="Num. Teléfono" value="">
-					</div>
-					<div  class="col-md-12" style="display: flex; gap: 10px;">
-						<label class="control-label" for="name">Código postal</label>
-						<input type="number" class="form-control" name="postal_code" placeholder="Código postal" value="">
-					</div>
+			<div class="col-md-4" style="display: flex; gap: 10px;">
+				<label class="control-label">Apellidos</label>
+				<input type="text" class="form-control" type="text" name="last_name" placeholder="Apellidos" value="{{ isset($customer) ? $customer->last_name : '' }}">
 			</div>
-
-			<div class="col-md-5 " style="display: flex; flex-direction: column; gap: 8px;">
-
-				<div  class="col-md-12" style="display: flex;">
-				<label for="name">Seleccione su género</label>
-			<select class="form-control" name="gender" id="gender">
-				<option value="">Seleccione</option>
-				<option value="masculino">Masculino</option>
-				<option value="femenino">Femenino</option>
-
-			</select>
-
-				</div>
-
-				<div  class="col-md-12" style="display: flex;">
-
-					<label class="control-label" for="name">Correo electrónico</label>
-					<input type="text" class="form-control" name="email" placeholder="Correo electrónico" value="">
-
-				</div>
+			<div class="col-md-4" style="display: flex; gap: 10px;">
+				<label class="control-label">Dirección</label>
+				<input type="text" class="form-control" type="text" name="address" placeholder="Dirección" value="{{ isset($customer) ? $customer->address : '' }}">
 			</div>
-</div>
+		</div>
+		<div class="row" style="">
+			<div  class="col-md-4" style="display: flex; gap: 10px;">
+				<label class="control-label">Num. Teléfono</label>
+				<input type="text" class="form-control" name="phone" placeholder="Num. Teléfono" value="{{ isset($customer) ? $customer->phone : '' }}">
+			</div>
+			<div  class="col-md-4" style="display: flex; gap: 10px;">
+				<label class="control-label">Código postal</label>
+				<input type="number" class="form-control" name="postal_code" placeholder="Código postal" value="{{ isset($customer) ? $customer->postal_code : '' }}">
+			</div>
+			<div  class="col-md-4" style="display: flex;">
+				<label class="control-label">Seleccione su género</label>
+				<select class="form-control" name="gender" id="gender">
+					<option value="">Seleccione</option>
+					<option value="masculino" {{ isset($customer) && $customer->gender == 'masculino' ? 'selected' : '' }}>Masculino</option>
+					<option value="femenino" {{ isset($customer) && $customer->gender == 'femenino' ? 'selected' : '' }}>Femenino</option>
+				</select>
+			</div>
+		</div>
+		<div class="row" style="display: flex; flex-direction: column; gap: 8px;">
+			<div  class="col-md-6" style="display: flex;">
+				<label class="control-label">Correo electrónico</label>
+				<input type="text" class="form-control" name="email" placeholder="Correo electrónico" value="{{ $customer->email ?? '' }}">
+			</div>
+		</div>
+	</div>
+ </div>
 
 
 <!-- MASCOTA -->
-	<h1 class="page-title">
+<div>
+	<h1 class="page-title col-md-12">
         <i class="voyager-paw"></i>
         Añadir mascota
     </h1>
@@ -98,7 +132,6 @@
 			</select>
 	</div>
 
-<form style="gap: 8px;">
 		<div style=" gap: 8px;">
 
 			<div class="col-md-4" style=" gap: 8px;">
@@ -106,33 +139,33 @@
 				<div class="col-md-12" style="display: flex; gap: 10px;">
 
 					<label class="control-label">Nombre (s)</label>
-					<input required = "" type="text" class="form-control" name="name" placeholder="Nombre (s)" value="" />
+					<input = "" type="text" class="form-control" name="name" placeholder="Nombre (s)" value="" />
 
 				</div>
 
 				<div class="col-md-12" style="display: flex; gap: 20px; margin-top: 15px;">
 					<label class="control-label">Dieta</label>
-					<input type="text" class="form-control" type="text" name="food" placeholder="Dieta" value=""></input>
+					<input type="text" class="form-control" type="text" name="food" placeholder="Dieta" value="">
 				</div>
 
 				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
 						<label class="control-label">Num. De paseos por semana</label>
-						<input class="form-control" type="number" name="walk" placeholder="Num. De paseos por semana" min="0" value=""></input>
+						<input class="form-control" type="number" name="walk" placeholder="Num. De paseos por semana" min="0" value="">
 				</div>
 
 				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
 						<label class="control-label">Num. De paseos en la mañana</label>
-						<input class="form-control" type="number" name="morning" placeholder="Num. De paseos en la mañana" min="0" value=""></input>
+						<input class="form-control" type="number" name="morning" placeholder="Num. De paseos en la mañana" min="0" value="">
 				</div>
 
 				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
 						<label class="control-label">Num. De paseos en la tarde</label>
-						<input class="form-control" type="number" name="afternoon" placeholder="Num. De paseos en la tarde" min="0" value=""></input>
+						<input class="form-control" type="number" name="afternoon" placeholder="Num. De paseos en la tarde" min="0" value="">
 				</div>
 
 				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
 						<label class="control-label">Médico actual</label>
-						<input class="form-control" type="text" name="medic" placeholder="¿Quién atiente?" min="0" value=""></input>
+						<input class="form-control" type="text" name="medic" placeholder="¿Quién atiente?" min="0" value="">
 				</div>
 
 			</div>
@@ -142,11 +175,11 @@
 
 					<div  class="col-md-12" style="display: flex; gap: 10px;">
 						<label class="control-label" for="name">Raza</label>
-						<input required="" type="text" class="form-control" name="race" placeholder="Raza" value="">
+						<input="" type="text" class="form-control" name="race" placeholder="Raza" value="">
 					</div>
 					<div  class="col-md-12" style="display: flex; gap: 10px; margin-top: 15px;">
 						<label class="control-label" for="name">Peso</label>
-						<input required="" type="text" class="form-control" name="weight" placeholder="Peso" value="">
+						<input="" type="text" class="form-control" name="weight" placeholder="Peso" value="">
 					</div>
 					<div  class="col-md-12" style="display: flex; margin-top: 15px;">
 						<label class="control-label" for="name">Cumpleaños</label>
@@ -162,7 +195,7 @@
 					</div>
 					<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
 						<label class="control-label">¿Con cuantas personas vive?</label>
-						<input type="number" class="form-control"  name="housemates" placeholder="¿Con cuantas personas vive?" min="0" value=""></input>
+						<input type="number" class="form-control"  name="housemates" placeholder="¿Con cuantas personas vive?" min="0" value="">
 					</div>
 			</div>
 
@@ -185,42 +218,43 @@
 
 				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
 					<label class="control-label">Horario de comida: Mañana</label>
-					<input type="time" class="form-control"  name="other_morning" placeholder="Horario de comida: Mañana" min="0" value=""></input>
+					<input type="time" class="form-control"  name="other_morning" placeholder="Horario de comida: Mañana" min="0" value="">
 				</div>
 
 				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
 					<label class="control-label">Horario de comida: Tarde</label>
-					<input type="time" class="form-control" name="other_afternoon" placeholder="Horario de comida: Tarde" min="0" value=""></input>
+					<input type="time" class="form-control" name="other_afternoon" placeholder="Horario de comida: Tarde" min="0" value="">
 				</div>
 
 				<div class="col-md-12" style="display: flex; gap: 15px; margin-top: 15px;">
 					<label class="control-label">Horario de comida: Noche</label>
-					<input type="time" class="form-control" name="night" placeholder="Horario de comida: Noche" min="0" value=""></input>
+					<input type="time" class="form-control" name="night" placeholder="Horario de comida: Noche" min="0" value="">
 				</div>
 		</div>
 
 			<div class="col-md-12 " style="display: flex; gap: 8px; margin-top: 15px;">
 
 				<div class="col-md-4" style="display: flex; gap: 20px;">
-				<label class="control-label" for="name">¿Es agresivo?</label>
-
-					<ul class="radio" style="display: flex;" >
-							<li>
-								<input type="radio"  id="option-aggressive-yes" name="is_aggressive" checked="" value = "1">
-								<label for="option-aggressive-yes">Si</label>
-								<div class="check"></div>
-							</li>
-							<li>
-								<input type="radio" id="option-aggressive-no" name="is_aggressive" value = "0">
-								<label for="option-aggressive-no">No</label>
-								<div class="check"></div>
-							</li>
+				<div class="radio-container">
+					<label class="control-label" for="name">¿Es agresivo?</label>
+					<ul class="radio">
+						<li>
+							<input type="radio" id="option-aggressive-yes" name="is_aggressive" checked value="1">
+							<label for="option-aggressive-yes">Si</label>
+							<div class="check"></div>
+						</li>
+						<li>
+							<input type="radio" id="option-aggressive-no" name="is_aggressive" value="0">
+							<label for="option-aggressive-no">No</label>
+							<div class="check"></div>
+						</li>
 					</ul>
+				</div>
 				</div>
 
 				<div class="col-md-8" style="display: flex; gap: 60px;">
 					<label class="control-label">Especificar</label>
-					<input type="text" class="form-control" type="text" name="is_aggressive_details" placeholder="Si es agresivo" value=""></input>
+					<input type="text" class="form-control" type="text" name="is_aggressive_details" placeholder="Si es agresivo" value="">
 				</div>
 
 			</div>
@@ -229,145 +263,149 @@
 
 			<div  class="col-md-4" style="display: flex; gap: 20px;">
 
-				<label class="control-label" for="name">¿Tiene collar?</label>
-
-					<ul class="radio" style="display: flex;" >
-							<li>
-								<input type="radio"  id="option-necklace-yes" name="necklace" checked="" value = "1">
-								<label for="option-necklace-yes">Si</label>
-								<div class="check"></div>
-							</li>
-							<li>
-								<input type="radio" id="option-necklace-no" name="necklace" value = "0">
-								<label for="option-necklace-no">No</label>
-								<div class="check"></div>
-							</li>
+				<div class="radio-container">
+					<label class="control-label" for="name">¿Tiene collar?</label>
+					<ul class="radio">
+						<li>
+							<input type="radio" id="option-necklace-yes" name="necklace" checked value="1">
+							<label for="option-necklace-yes">Si</label>
+							<div class="check"></div>
+						</li>
+						<li>
+							<input type="radio" id="option-necklace-no" name="necklace" value="0">
+							<label for="option-necklace-no">No</label>
+							<div class="check"></div>
+						</li>
 					</ul>
+				</div>
 			</div>
 			<div class="col-md-8" style="display: flex; gap: 60px;">
 					<label class="control-label">Especificar</label>
-					<input type="text" class="form-control" type="text" name="necklace_details" placeholder="Color, tamaño, adorno..." value=""></input>
+					<input type="text" class="form-control" type="text" name="necklace_details" placeholder="Color, tamaño, adorno..." value="">
 			</div>
 		</div>
 		<div  class="col-md-12 " style="display: flex; gap: 8px; margin-top: 5px;">
 
 			<div  class="col-md-4" style="display: flex; gap: 20px;">
 
-				<label class="control-label" for="name">Alergias</label>
-
-					<ul class="radio" style="display: flex;" >
-							<li>
-								<input type="radio"  id="option-allergy-yes" name="allergy" checked="" value = "1">
-								<label for="option-allergy-yes">Si</label>
-								<div class="check"></div>
-							</li>
-							<li>
-								<input type="radio" id="option-allergy-no" name="allergy" value = "0">
-								<label for="option-allergy-no">No</label>
-								<div class="check"></div>
-							</li>
+				<div class="radio-container">
+					<label class="control-label" for="name">Alergias</label>
+					<ul class="radio">
+						<li>
+							<input type="radio" id="option-allergy-yes" name="allergy" checked value="1">
+							<label for="option-allergy-yes">Si</label>
+							<div class="check"></div>
+						</li>
+						<li>
+							<input type="radio" id="option-allergy-no" name="allergy" value="0">
+							<label for="option-allergy-no">No</label>
+							<div class="check"></div>
+						</li>
 					</ul>
+				</div>
 			</div>
 			<div class="col-md-8" style="display: flex; gap: 60px;">
 					<label class="control-label">Especificar</label>
-					<input type="text" class="form-control" type="text" name="allergy_details" placeholder="Si es alérgico" value=""></input>
+					<input type="text" class="form-control" type="text" name="allergy_details" placeholder="Si es alérgico" value="">
 			</div>
 			</div>
 		<div  class="col-md-12 " style="display: flex; gap: 8px; margin-top: 15px;">
 
 			<div  class="col-md-4" style="display: flex; gap: 20px;">
 
-				<label class="control-label" for="name">Fracturas</label>
-
-					<ul class="radio" style="display: flex;" >
-							<li>
-								<input type="radio"  id="option-fracture-yes" name="fracture" checked="" value = "1">
-								<label for="option-fracture-yes">Si</label>
-								<div class="check"></div>
-							</li>
-							<li>
-								<input type="radio" id="option-fracture-no" name="fracture" value = "0">
-								<label for="option-fracture-no">No</label>
-								<div class="check"></div>
-							</li>
+				<div class="radio-container">
+					<label class="control-label" for="name">Fracturas</label>
+					<ul class="radio">
+						<li>
+							<input type="radio" id="option-fracture-yes" name="fracture" checked value="1">
+							<label for="option-fracture-yes">Si</label>
+							<div class="check"></div>
+						</li>
+						<li>
+							<input type="radio" id="option-fracture-no" name="fracture" value="0">
+							<label for="option-fracture-no">No</label>
+							<div class="check"></div>
+						</li>
 					</ul>
+				</div>
 			</div>
 			<div class="col-md-8" style="display: flex; gap: 60px;">
 					<label class="control-label">Especificar</label>
-					<input type="text" class="form-control" type="text" name="fracture_details" placeholder="Si tiene alguna" value=""></input>
+					<input type="text" class="form-control" type="text" name="fracture_details" placeholder="Si tiene alguna" value="">
 			</div>
 		</div>
 		<div  class="col-md-12 " style="display: flex; gap: 8px; margin-top: 15px;">
 
 			<div  class="col-md-4" style="display: flex; gap: 20px;">
 
-				<label class="control-label" for="name">Cicatrices</label>
-
-					<ul class="radio" style="display: flex;" >
-							<li>
-								<input type="radio"  id="option-scar-yes" name="scar" checked="" value = "1">
-								<label for="option-scar-yes">Si</label>
-								<div class="check"></div>
-							</li>
-							<li>
-								<input type="radio" id="option-scar-no" name="scar" value = "0">
-								<label for="option-scar-no">No</label>
-								<div class="check"></div>
-							</li>
+				<div class="radio-container">
+					<label class="control-label" for="name">Cicatrices</label>
+					<ul class="radio">
+						<li>
+							<input type="radio" id="option-scar-yes" name="scar" checked value="1">
+							<label for="option-scar-yes">Si</label>
+							<div class="check"></div>
+						</li>
+						<li>
+							<input type="radio" id="option-scar-no" name="scar" value="0">
+							<label for="option-scar-no">No</label>
+							<div class="check"></div>
+						</li>
 					</ul>
+				</div>
 			</div>
 			<div class="col-md-8" style="display: flex; gap: 60px;">
 					<label class="control-label">Especificar</label>
-					<input type="text" class="form-control" type="text" name="scar_details" placeholder="Forma, tamaño, dolor..." value=""></input>
+					<input type="text" class="form-control" type="text" name="scar_details" placeholder="Forma, tamaño, dolor..." value="">
 			</div>
 		</div>
 		<div  class="col-md-12 " style="display: flex; gap: 8px; margin-top: 15px;">
 
 			<div  class="col-md-4" style="display: flex; gap: 20px;">
 
-				<label class="control-label" for="name">Hospitalizaciones</label>
-
-					<ul class="radio" style="display: flex;" >
-							<li>
-								<input type="radio"  id="option-hospitalization-yes" name="hospitalization" checked="" value = "1">
-								<label for="option-hospitalization-yes">Si</label>
-								<div class="check"></div>
-							</li>
-							<li>
-								<input type="radio" id="option-hospitalization-no" name="hospitalization" value = "0">
-								<label for="option-hospitalization-no">No</label>
-								<div class="check"></div>
-							</li>
+				<div class="radio-container">
+					<label class="control-label" for="name">Hospitalizaciones</label>
+					<ul class="radio">
+						<li>
+							<input type="radio" id="option-hospitalization-yes" name="hospitalization" checked value="1">
+							<label for="option-hospitalization-yes">Si</label>
+							<div class="check"></div>
+						</li>
+						<li>
+							<input type="radio" id="option-hospitalization-no" name="hospitalization" value="0">
+							<label for="option-hospitalization-no">No</label>
+							<div class="check"></div>
+						</li>
 					</ul>
+				</div>
 			</div>
 			<div class="col-md-8" style="display: flex; gap: 60px;">
 					<label class="control-label">Especificar</label>
-					<input type="text" class="form-control" type="text" name="hospitalization_details" placeholder="Si ha sufrido" value=""></input>
+					<input type="text" class="form-control" type="text" name="hospitalization_details" placeholder="Si ha sufrido" value="">
 			</div>
 		</div>
 
-		<div  class="col-md-12 " style="display: flex; gap: 8px; margin-top: 15px;">
-
-			<div  class="col-md-4" style="display: flex; gap: 20px;">
-
-				<label class="control-label" for="name">¿Ha estado en algun curso de entrenamiento?</label>
-
-					<ul class="radio" style="display: flex;" >
-							<li>
-								<input type="radio"  id="option-training-yes" name="training" checked="" value = "1">
-								<label for="option-training-yes">Si</label>
-								<div class="check"></div>
-							</li>
-							<li>
-								<input type="radio" id="option-training-no" name="training" value = "0">
-								<label for="option-training-no">No</label>
-								<div class="check"></div>
-							</li>
+		<div class="col-md-12" style="display: flex; gap: 8px; margin-top: 15px;">
+			<div class="col-md-4">
+				<div class="radio-container">
+					<label class="control-label" for="name">¿Ha estado en algún curso de entrenamiento?</label>
+					<ul class="radio">
+						<li>
+							<input type="radio" id="option-training-yes" name="training" checked value="1">
+							<label for="option-training-yes">Si</label>
+							<div class="check"></div>
+						</li>
+						<li>
+							<input type="radio" id="option-training-no" name="training" value="0">
+							<label for="option-training-no">No</label>
+							<div class="check"></div>
+						</li>
 					</ul>
+				</div>
 			</div>
 			<div class="col-md-8" style="display: flex; gap: 60px;">
 					<label class="control-label">Especificar</label>
-					<input type="text" class="form-control" type="text" name="training_details" placeholder="¿Cuál?" value=""></input>
+					<input type="text" class="form-control" type="text" name="training_details" placeholder="¿Cuál?" value="">
 			</div>
 		</div>
 
@@ -429,6 +467,7 @@
 		</div>
 </div>
 
+</div>
 <!-- Recibo -->
 	<h1 class="page-title">
 			<i class="voyager-double-up"></i>
@@ -466,7 +505,7 @@
 
 					<div  class="col-md-12" style="display: flex; gap: 10px; margin-top: 15px;">
 						<label class="control-label" for="name">Unidad de servicio</label>
-						<input required="" type="number" class="form-control" name="service_unit" placeholder="Unidad de servicio" value="">
+						<input="" type="number" class="form-control" name="service_unit" placeholder="Unidad de servicio" value="">
 					</div>
 
 					<div  class="col-md-12" style="display: flex; gap: 10px; margin-top: 15px;">
@@ -475,12 +514,8 @@
 					</div>
 				</div>
 			</div>
-	<button type="submit" class="btn btn-primary">Enviar</button>
+	<button type="submit" class="btn btn-primary" name="action" value="save_data">Enviar</button>
 </form>
 
 @endsection
-
-<!-- @section('javascript')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-@endsection -->
 

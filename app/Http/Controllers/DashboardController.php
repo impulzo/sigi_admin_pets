@@ -23,10 +23,21 @@ class DashboardController extends VoyagerBaseController
 		$pets = Pet::all();
 		$payment_methods = PaymentMethod::all();
 		$services = Service::all();
-
+		$customer = null;
+		$pet = null;
+		
+		if($request->has('action')){
+			if($request->has('customer_id')){
+				$customer = Customer::find($request->all()['customer_id']);
+			}
+			if($request->has('pet_id')){
+				$pet = Pet::find($request->all()['pet_id']);
+			}
+		}
 
 		return view('vendor.voyager.dashboard', compact(
-			'customers', 'pets', 'payment_methods','services'
+			'customers', 'pets', 'payment_methods','services',
+			'customer', 'pet'
 		));
 	}
 
@@ -39,6 +50,37 @@ class DashboardController extends VoyagerBaseController
 		$petId = 0;
 		$receiptData = [];
 		$receipt = null;
+
+		if($request->all()['action'] == 'search_customer'){
+			$request->merge([
+				'customer_id' => $request->all()['customer_id'],
+				'action' => 'search_customer',
+			]);
+			return $this->index($request);
+		}
+
+		if($request->all()['action'] == 'search_pet'){
+			$request->merge([
+				'pet_id' => $request->all()['pet_id'],
+				'action' => 'search_customer',
+			]);
+			return $this->index($request);
+		}
+
+		$request->validate([
+			'first_name' => 'required',
+			'last_name' => 'required',
+			'address' => 'required',
+			'phone' => 'required',
+			'postal_code' => 'required',
+		], [
+			'first_name.required' => 'El nombre es requerido',
+			'last_name.required' => 'Los apellidos son requeridos',
+			'address.required' => 'La dirección es requerida',
+			'phone.required' => 'El número de teléfono es requerido',
+			'postal_code.required' => 'El código postal es requerido',
+		]);
+
 		try {
 			$data =  [
 				'message'    => "Informacion guardada con éxito",
@@ -149,5 +191,10 @@ class DashboardController extends VoyagerBaseController
 		}
 
 		return redirect()->route("voyager.receipt.pdf", $receipt->id);
+	}
+
+	public function search(Request $request)
+	{
+
 	}
 }

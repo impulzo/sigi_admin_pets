@@ -54,7 +54,6 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('/dashboard/receipt/{id}', [ReceiptController::class, 'generateReceiptPdf'])
 	->name('voyager.receipt.pdf');
 
-
 });
 
 Auth::routes();

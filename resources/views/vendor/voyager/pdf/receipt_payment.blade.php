@@ -82,7 +82,7 @@
         <!-- Original -->
         <div class="receipt">
             <div class="header">
-                <img src="{{ asset('storage/logo.png') }}" alt="Logo" class="logo">
+                <img src="https://app.casawuauyacan.com.mx/settings/December2024/h3pCHPiE2jZjxTbItvU6.png" alt="Logo" class="logo">
                 <h2>RECIBO DE PAGO</h2>
                 <p>Fecha: {{ \Carbon\Carbon::parse($receipt->date)->format('d/m/Y') }}</p>
             </div>
@@ -123,7 +123,7 @@
         <div class="receipt">
             <div class="copy-label">COPIA CLIENTE</div>
             <div class="header">
-                <img src="{{ asset('storage/logo.png') }}" alt="Logo" class="logo">
+                <img src="https://app.casawuauyacan.com.mx/settings/December2024/h3pCHPiE2jZjxTbItvU6.png" alt="Logo" class="logo">
                 <h2>RECIBO DE PAGO</h2>
                 <p>Fecha: {{ \Carbon\Carbon::parse($receipt->date)->format('d/m/Y') }}</p>
             </div>
