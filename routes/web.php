@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
 use App\Http\Controllers\MainController;
-
+use App\Http\Controllers\ReceiptController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,6 +51,8 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::post('/dashboard/store', [DashboardController::class, 'store'])
 	->name('voyager.dashboard.store');
 
+	Route::get('/dashboard/receipt/{id}', [ReceiptController::class, 'generateReceiptPdf'])
+	->name('voyager.receipt.pdf');
 
 
 });

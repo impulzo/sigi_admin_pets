@@ -32,13 +32,13 @@ class DashboardController extends VoyagerBaseController
 
 	public function store(Request $request)
 	{
-		dd($request->all());
 		$data = [];
 		$customerData = [];
 		$customerId = 0;
 		$petData = [];
 		$petId = 0;
 		$receiptData = [];
+		$receipt = null;
 		try {
 			$data =  [
 				'message'    => "Informacion guardada con éxito",
@@ -60,11 +60,11 @@ class DashboardController extends VoyagerBaseController
 				$customer = Customer::create($customerData);
 				$customerId = $customer->id;
 			} else {
-				$customerId = $request->all()['customer_id'];
+				$customerId = intval($request->all()['customer_id']);
 			}
 
 			// Si el perro no existe, se crea
-			if(request->all()['pet_id'] == null){
+			if($request->all()['pet_id'] == null){
 				$petData = $request->only([
 					'name',
 					'food',
@@ -116,7 +116,7 @@ class DashboardController extends VoyagerBaseController
 				$pet = Pet::create($petData);
 				$petId = $pet->id;
 			} else {
-				$petId = $request->all()['pet_id'];
+				$petId = intval($request->all()['pet_id']);
 			}
 
 			// Crear la Venta
@@ -128,28 +128,26 @@ class DashboardController extends VoyagerBaseController
 				'date',
 			]);
 
-
-
+			$service = Service::find($receiptData['service_id']);
+			$receiptData['amount'] = $service->cost * intval($receiptData['service_unit']);
 			$receiptData['customer_id'] = $customerId;
 			$receiptData['pet_id'] = $petId;
 			$receiptData['user_id'] = auth()->id();
 			$receipt = Receipt::create($receiptData);
-
-		} catch (ServiceException $ex) {
+		} catch (\Exception $ex) {
 			$dto = new LogErrorDto();
 			$dto->url = $request->path();
 			$dto->description = "STORE";
 			$dto->request = json_encode($request->json);
 			$dto->response = $ex->getMessage();
 			$dto->status = 500;
-			$this->logError($dto, $ex->getType());
 			$data = [
 				'message'    => $ex->getMessage(),
 				'alert-type' => 'error',
 			];
-		} finally {
 			return redirect()->route("voyager.dashboard")->with($data);
 		}
 
+		return redirect()->route("voyager.receipt.pdf", $receipt->id);
 	}
 }

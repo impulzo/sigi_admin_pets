@@ -48,7 +48,7 @@ class Pet extends Model
 		'observation',
 		'recommendation',
 		'medic',
-
+		'customer_id',
 	];
 	public function client()
 {

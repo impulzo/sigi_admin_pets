@@ -106,7 +106,7 @@
 				<div class="col-md-12" style="display: flex; gap: 10px;">
 
 					<label class="control-label">Nombre (s)</label>
-					<input required = "" type="text" class="form-control" name="name" placeholder="Nombre (s)" value=""></input>
+					<input required = "" type="text" class="form-control" name="name" placeholder="Nombre (s)" value="" />
 
 				</div>
 
