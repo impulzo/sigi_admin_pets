@@ -32,7 +32,7 @@ class DashboardController extends VoyagerBaseController
 
 	public function store(Request $request)
 	{
-		dd($request->all()['is_aggressive']);
+		dd($request->all());
 		$data = [];
 		$customerData = [];
 		$customerId = 0;
@@ -119,18 +119,19 @@ class DashboardController extends VoyagerBaseController
 				$petId = $request->all()['pet_id'];
 			}
 
-
+			// Crear la Venta
 			$receiptData = $request->only([
 				'service_id',
 				'payment_method_id',
 				'amount',
-				'concept',
+				'service_unit',
 				'date',
 			]);
 
 
 
 			$receiptData['customer_id'] = $customerId;
+			$receiptData['pet_id'] = $petId;
 			$receiptData['user_id'] = auth()->id();
 			$receipt = Receipt::create($receiptData);
 
