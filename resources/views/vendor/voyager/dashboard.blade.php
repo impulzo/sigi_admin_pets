@@ -206,12 +206,12 @@
 
 					<ul class="radio" style="display: flex;" >
 							<li>
-								<input type="radio"  id="option-aggressive-yes" name="is_aggressive" checked="">
+								<input type="radio"  id="option-aggressive-yes" name="is_aggressive" checked="" value = "1">
 								<label for="option-aggressive-yes">Si</label>
 								<div class="check"></div>
 							</li>
 							<li>
-								<input type="radio" id="option-aggressive-no" name="is_aggressive">
+								<input type="radio" id="option-aggressive-no" name="is_aggressive" value = "0">
 								<label for="option-aggressive-no">No</label>
 								<div class="check"></div>
 							</li>
@@ -233,12 +233,12 @@
 
 					<ul class="radio" style="display: flex;" >
 							<li>
-								<input type="radio"  id="option-necklace-yes" name="necklace" checked="">
+								<input type="radio"  id="option-necklace-yes" name="necklace" checked="" value = "1">
 								<label for="option-necklace-yes">Si</label>
 								<div class="check"></div>
 							</li>
 							<li>
-								<input type="radio" id="option-necklace-no" name="necklace">
+								<input type="radio" id="option-necklace-no" name="necklace" value = "0">
 								<label for="option-necklace-no">No</label>
 								<div class="check"></div>
 							</li>
@@ -257,12 +257,12 @@
 
 					<ul class="radio" style="display: flex;" >
 							<li>
-								<input type="radio"  id="option-allergy-yes" name="allergy" checked="">
+								<input type="radio"  id="option-allergy-yes" name="allergy" checked="" value = "1">
 								<label for="option-allergy-yes">Si</label>
 								<div class="check"></div>
 							</li>
 							<li>
-								<input type="radio" id="option-allergy-no" name="allergy">
+								<input type="radio" id="option-allergy-no" name="allergy" value = "0">
 								<label for="option-allergy-no">No</label>
 								<div class="check"></div>
 							</li>
@@ -281,12 +281,12 @@
 
 					<ul class="radio" style="display: flex;" >
 							<li>
-								<input type="radio"  id="option-fracture-yes" name="fracture" checked="">
+								<input type="radio"  id="option-fracture-yes" name="fracture" checked="" value = "1">
 								<label for="option-fracture-yes">Si</label>
 								<div class="check"></div>
 							</li>
 							<li>
-								<input type="radio" id="option-fracture-no" name="fracture">
+								<input type="radio" id="option-fracture-no" name="fracture" value = "0">
 								<label for="option-fracture-no">No</label>
 								<div class="check"></div>
 							</li>
@@ -305,12 +305,12 @@
 
 					<ul class="radio" style="display: flex;" >
 							<li>
-								<input type="radio"  id="option-scar-yes" name="scar" checked="">
+								<input type="radio"  id="option-scar-yes" name="scar" checked="" value = "1">
 								<label for="option-scar-yes">Si</label>
 								<div class="check"></div>
 							</li>
 							<li>
-								<input type="radio" id="option-scar-no" name="scar">
+								<input type="radio" id="option-scar-no" name="scar" value = "0">
 								<label for="option-scar-no">No</label>
 								<div class="check"></div>
 							</li>
@@ -329,12 +329,12 @@
 
 					<ul class="radio" style="display: flex;" >
 							<li>
-								<input type="radio"  id="option-hospitalization-yes" name="hospitalization" checked="">
+								<input type="radio"  id="option-hospitalization-yes" name="hospitalization" checked="" value = "1">
 								<label for="option-hospitalization-yes">Si</label>
 								<div class="check"></div>
 							</li>
 							<li>
-								<input type="radio" id="option-hospitalization-no" name="hospitalization">
+								<input type="radio" id="option-hospitalization-no" name="hospitalization" value = "0">
 								<label for="option-hospitalization-no">No</label>
 								<div class="check"></div>
 							</li>
@@ -354,12 +354,12 @@
 
 					<ul class="radio" style="display: flex;" >
 							<li>
-								<input type="radio"  id="option-training-yes" name="training" checked="">
+								<input type="radio"  id="option-training-yes" name="training" checked="" value = "1">
 								<label for="option-training-yes">Si</label>
 								<div class="check"></div>
 							</li>
 							<li>
-								<input type="radio" id="option-training-no" name="training">
+								<input type="radio" id="option-training-no" name="training" value = "0">
 								<label for="option-training-no">No</label>
 								<div class="check"></div>
 							</li>
@@ -465,13 +465,8 @@
 				<div class="col-md-4 " style="">
 
 					<div  class="col-md-12" style="display: flex; gap: 10px; margin-top: 15px;">
-						<label class="control-label" for="name">Monto</label>
-						<input required="" type="number" class="form-control" name="amount" placeholder="Monto" value="">
-					</div>
-
-					<div  class="col-md-12" style="display: flex; gap: 10px; margin-top: 15px;">
-						<label class="control-label" for="name">Concepto</label>
-						<input required="" type="text" class="form-control" name="concept" placeholder="Concepto" value="">
+						<label class="control-label" for="name">Unidad de servicio</label>
+						<input required="" type="number" class="form-control" name="service_unit" placeholder="Unidad de servicio" value="">
 					</div>
 
 					<div  class="col-md-12" style="display: flex; gap: 10px; margin-top: 15px;">
