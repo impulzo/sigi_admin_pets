@@ -25,7 +25,7 @@ class DashboardController extends VoyagerBaseController
 		$services = Service::all();
 		$customer = null;
 		$pet = null;
-		
+
 		if($request->has('action')){
 			if($request->has('customer_id')){
 				$customer = Customer::find($request->all()['customer_id']);
@@ -62,7 +62,7 @@ class DashboardController extends VoyagerBaseController
 		if($request->all()['action'] == 'search_pet'){
 			$request->merge([
 				'pet_id' => $request->all()['pet_id'],
-				'action' => 'search_customer',
+				'action' => 'search_pet',
 			]);
 			return $this->index($request);
 		}
@@ -73,12 +73,24 @@ class DashboardController extends VoyagerBaseController
 			'address' => 'required',
 			'phone' => 'required',
 			'postal_code' => 'required',
+			'name' => 'required',
+			'birthdate' => 'required',
+			'race' => 'required',
+			'sex' => 'required',
+			'weight' => 'required',
+			'necklace' => 'required',
 		], [
 			'first_name.required' => 'El nombre es requerido',
 			'last_name.required' => 'Los apellidos son requeridos',
 			'address.required' => 'La dirección es requerida',
 			'phone.required' => 'El número de teléfono es requerido',
 			'postal_code.required' => 'El código postal es requerido',
+			'name.required' => 'El nombre es requerido',
+			'birthdate.required' => 'El cumpleaños de la mascota es requerido',
+			'race.required' => 'La raza es requerido',
+			'sex.required' => 'El sexo de la mascota es requerido',
+			'weight.required' => 'El peso es requerido',
+			'necklace.required' => 'El collar es requerido',
 		]);
 
 		try {
