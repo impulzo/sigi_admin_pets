@@ -132,7 +132,7 @@
 					<option value="{{ $dog->id }}" {{ isset($pet) && $dog->id == $pet->id ? 'selected' : '' }}>{{ $dog->name }}</option>
 					@endforeach
 				</select>
-				<button class="btn btn-primary" name="action" value="search_pet">Buscar Mascota</button>
+				<button class="btn btn-primary" name="action" value="search_pet" type="submit" >Buscar Mascota</button>
 		</div>
 
 	</div>
@@ -276,12 +276,12 @@
 						<label class="control-label" for="name">¿Tiene collar?</label>
 						<ul class="radio">
 							<li>
-								<input type="radio" id="option-necklace-yes" name="necklace" checked value="1">
+								<input type="radio" id="option-necklace-yes" name="necklace" value="1" {{ isset($pet) && $pet->necklace == '1' ? 'checked' : '' }}>
 								<label for="option-necklace-yes">Si</label>
 								<div class="check"></div>
 							</li>
 							<li>
-								<input type="radio" id="option-necklace-no" name="necklace" value="0">
+								<input type="radio" id="option-necklace-no" name="necklace" value="0" {{ isset($pet) && $pet->necklace == '0' ? 'checked' : '' }}>
 								<label for="option-necklace-no">No</label>
 								<div class="check"></div>
 							</li>
@@ -301,12 +301,12 @@
 						<label class="control-label" for="name">Alergias</label>
 						<ul class="radio">
 							<li>
-								<input type="radio" id="option-allergy-yes" name="allergy" checked value="1">
+								<input type="radio" id="option-allergy-yes" name="allergy" value="1" {{ isset($pet) && $pet->allergy == '1' ? 'checked' : '' }}>
 								<label for="option-allergy-yes">Si</label>
 								<div class="check"></div>
 							</li>
 							<li>
-								<input type="radio" id="option-allergy-no" name="allergy" value="0">
+								<input type="radio" id="option-allergy-no" name="allergy" value="0" {{ isset($pet) && $pet->allergy == '0' ? 'checked' : '' }}>
 								<label for="option-allergy-no">No</label>
 								<div class="check"></div>
 							</li>
@@ -326,12 +326,12 @@
 						<label class="control-label" for="name">Fracturas</label>
 						<ul class="radio">
 							<li>
-								<input type="radio" id="option-fracture-yes" name="fracture" checked value="1">
+								<input type="radio" id="option-fracture-yes" name="fracture" value="1" {{ isset($pet) && $pet->fracture == '1' ? 'checked' : '' }}>
 								<label for="option-fracture-yes">Si</label>
 								<div class="check"></div>
 							</li>
 							<li>
-								<input type="radio" id="option-fracture-no" name="fracture" value="0">
+								<input type="radio" id="option-fracture-no" name="fracture" value="0" {{ isset($pet) && $pet->fracture == '0' ? 'checked' : '' }}>
 								<label for="option-fracture-no">No</label>
 								<div class="check"></div>
 							</li>
@@ -351,12 +351,12 @@
 						<label class="control-label" for="name">Cicatrices</label>
 						<ul class="radio">
 							<li>
-								<input type="radio" id="option-scar-yes" name="scar" checked value="1">
+								<input type="radio" id="option-scar-yes" name="scar" value="1" {{ isset($pet) && $pet->scar == '1' ? 'checked' : '' }}>
 								<label for="option-scar-yes">Si</label>
 								<div class="check"></div>
 							</li>
 							<li>
-								<input type="radio" id="option-scar-no" name="scar" value="0">
+								<input type="radio" id="option-scar-no" name="scar" value="0" {{ isset($pet) && $pet->scar == '0' ? 'checked' : '' }}>
 								<label for="option-scar-no">No</label>
 								<div class="check"></div>
 							</li>
@@ -376,12 +376,12 @@
 						<label class="control-label" for="name">Hospitalizaciones</label>
 						<ul class="radio">
 							<li>
-								<input type="radio" id="option-hospitalization-yes" name="hospitalization" checked value="1">
+								<input type="radio" id="option-hospitalization-yes" name="hospitalization" value="1" {{ isset($pet) && $pet->hospitalization == '1' ? 'checked' : '' }}>
 								<label for="option-hospitalization-yes">Si</label>
 								<div class="check"></div>
 							</li>
 							<li>
-								<input type="radio" id="option-hospitalization-no" name="hospitalization" value="0">
+								<input type="radio" id="option-hospitalization-no" name="hospitalization" value="0" {{ isset($pet) && $pet->hospitalization == '0' ? 'checked' : '' }}>
 								<label for="option-hospitalization-no">No</label>
 								<div class="check"></div>
 							</li>
@@ -400,12 +400,12 @@
 						<label class="control-label" for="name">¿Ha estado en algún curso de entrenamiento?</label>
 						<ul class="radio">
 							<li>
-								<input type="radio" id="option-training-yes" name="training" checked value="1">
+								<input type="radio" id="option-training-yes" name="training" value="1" {{ isset($pet) && $pet->training == '1' ? 'checked' : '' }}>
 								<label for="option-training-yes">Si</label>
 								<div class="check"></div>
 							</li>
 							<li>
-								<input type="radio" id="option-training-no" name="training" value="0">
+								<input type="radio" id="option-training-no" name="training" value="0" {{ isset($pet) && $pet->training == '0' ? 'checked' : '' }}>
 								<label for="option-training-no">No</label>
 								<div class="check"></div>
 							</li>

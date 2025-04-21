@@ -79,6 +79,10 @@ class DashboardController extends VoyagerBaseController
 			'sex' => 'required',
 			'weight' => 'required',
 			'necklace' => 'required',
+			'date' => 'required',
+			'service_unit' => 'required',
+			'service' => 'required',
+			'payment_method' => 'required',
 		], [
 			'first_name.required' => 'El nombre es requerido',
 			'last_name.required' => 'Los apellidos son requeridos',
@@ -91,8 +95,17 @@ class DashboardController extends VoyagerBaseController
 			'sex.required' => 'El sexo de la mascota es requerido',
 			'weight.required' => 'El peso es requerido',
 			'necklace.required' => 'El collar es requerido',
+			'service_unit.required' => 'La unidad por servicio es requerido',
+			'service.required' => 'El servicio es requerido',
+			'payment_method.required' => 'El método de pago es requerido',
 		]);
-
+		if($request->validate()->fails()){
+			$data = [
+				'message'    => "Error al guardar la información",
+				'alert-type' => 'error',
+			];
+			return redirect()->route("voyager.dashboard")->with($data);
+		}
 		try {
 			$data =  [
 				'message'    => "Informacion guardada con éxito",
