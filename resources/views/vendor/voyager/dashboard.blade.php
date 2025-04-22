@@ -515,12 +515,7 @@
 
 					<div  class="col-md-6" style="display: flex; gap: 10px; margin-top: 15px;">
 						<label class="control-label" for="name">Unidad de servicio</label>
-						<input="" type="number" class="form-control" name="service_unit" placeholder="Unidad de servicio" value="">
-					</div>
-
-					<div  class="col-md-6" style="display: flex; gap: 10px; margin-top: 15px;">
-						<label class="control-label" for="name">Fecha</label>
-						<input type="date" class="form-control" name="date">
+						<input type="number" class="form-control" name="service_unit" placeholder="Unidad de servicio" value="">
 					</div>
 				</div>
 			</div>

@@ -81,8 +81,8 @@ class DashboardController extends VoyagerBaseController
 			'necklace' => 'required',
 			'date' => 'required',
 			'service_unit' => 'required',
-			'service' => 'required',
-			'payment_method' => 'required',
+			'service_id' => 'required',
+			'payment_method_id' => 'required',
 		], [
 			'first_name.required' => 'El nombre es requerido',
 			'last_name.required' => 'Los apellidos son requeridos',
@@ -99,13 +99,7 @@ class DashboardController extends VoyagerBaseController
 			'service.required' => 'El servicio es requerido',
 			'payment_method.required' => 'El método de pago es requerido',
 		]);
-		if($request->validate()->fails()){
-			$data = [
-				'message'    => "Error al guardar la información",
-				'alert-type' => 'error',
-			];
-			return redirect()->route("voyager.dashboard")->with($data);
-		}
+
 		try {
 			$data =  [
 				'message'    => "Informacion guardada con éxito",
@@ -200,6 +194,7 @@ class DashboardController extends VoyagerBaseController
 			$receiptData['customer_id'] = $customerId;
 			$receiptData['pet_id'] = $petId;
 			$receiptData['user_id'] = auth()->id();
+			$receiptData['date'] = date('Y-m-d');
 			$receipt = Receipt::create($receiptData);
 		} catch (\Exception $ex) {
 			$dto = new LogErrorDto();
