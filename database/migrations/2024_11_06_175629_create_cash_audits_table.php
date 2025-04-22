@@ -16,8 +16,8 @@ class CreateCashAuditsTable extends Migration
         Schema::create('cash_audits', function (Blueprint $table) {
             $table->id();
 			$table->integer('user_id');
-			$table->string('start_date');
-			$table->string('finish_date');
+			$table->date('start_date');
+			$table->date('finish_date');
 			$table->float('total_bills');
 			$table->float('total_ingress');
             $table->timestamps();

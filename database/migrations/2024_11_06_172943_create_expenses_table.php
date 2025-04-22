@@ -18,7 +18,7 @@ class CreateExpensesTable extends Migration
 			$table->integer('user_id');
 			$table->float('amount');
 			$table->string('concept');
-			$table->string('date');
+			$table->date('date');
 			$table->string('observation');
 			$table->integer('payment_method_id');
             $table->timestamps();

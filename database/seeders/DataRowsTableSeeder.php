@@ -2426,14 +2426,14 @@ class DataRowsTableSeeder extends Seeder
                 'data_type_id' => 22,
                 'delete' => 1,
                 'details' => '{}',
-                'display_name' => 'Hora de la cita',
+                'display_name' => 'Fecha y hora de la cita',
                 'edit' => 1,
                 'field' => 'date_time',
                 'id' => 152,
                 'order' => 4,
                 'read' => 1,
                 'required' => 1,
-                'type' => 'time',
+                'type' => 'timestamp',
             ),
             151 => 
             array (
@@ -2593,7 +2593,7 @@ class DataRowsTableSeeder extends Seeder
                 'order' => 6,
                 'read' => 1,
                 'required' => 1,
-                'type' => 'number',
+                'type' => 'hidden',
             ),
             161 => 
             array (
@@ -2760,7 +2760,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'browse' => 0,
                 'data_type_id' => 29,
-                'delete' => 1,
+                'delete' => 0,
                 'details' => '{}',
                 'display_name' => 'User Id',
                 'edit' => 0,
@@ -2769,7 +2769,7 @@ class DataRowsTableSeeder extends Seeder
                 'order' => 3,
                 'read' => 1,
                 'required' => 1,
-                'type' => 'number',
+                'type' => 'hidden',
             ),
             172 => 
             array (
@@ -2785,7 +2785,7 @@ class DataRowsTableSeeder extends Seeder
                 'order' => 4,
                 'read' => 1,
                 'required' => 1,
-                'type' => 'date',
+                'type' => 'timestamp',
             ),
             173 => 
             array (
@@ -2801,7 +2801,7 @@ class DataRowsTableSeeder extends Seeder
                 'order' => 5,
                 'read' => 1,
                 'required' => 1,
-                'type' => 'date',
+                'type' => 'timestamp',
             ),
             174 => 
             array (
@@ -2817,14 +2817,14 @@ class DataRowsTableSeeder extends Seeder
                 'order' => 6,
                 'read' => 1,
                 'required' => 1,
-                'type' => 'date',
+                'type' => 'timestamp',
             ),
             175 => 
             array (
                 'add' => 1,
                 'browse' => 0,
                 'data_type_id' => 29,
-                'delete' => 1,
+                'delete' => 0,
                 'details' => '{}',
                 'display_name' => 'Receipt Id',
                 'edit' => 0,
@@ -2833,7 +2833,7 @@ class DataRowsTableSeeder extends Seeder
                 'order' => 7,
                 'read' => 1,
                 'required' => 1,
-                'type' => 'number',
+                'type' => 'hidden',
             ),
             176 => 
             array (
@@ -3215,19 +3215,19 @@ class DataRowsTableSeeder extends Seeder
                 'field' => 'calendar_belongsto_user_relationship',
                 'id' => 221,
                 'order' => 11,
-                'read' => 0,
+                'read' => 1,
                 'required' => 1,
                 'type' => 'relationship',
             ),
             200 => 
             array (
-                'add' => 0,
-                'browse' => 0,
+                'add' => 1,
+                'browse' => 1,
                 'data_type_id' => 29,
                 'delete' => 1,
-                'details' => '{"model":"App\\\\Models\\\\Receipt","table":"receipts","type":"belongsTo","column":"receipt_id","key":"id","label":"concept","pivot_table":"calendars","pivot":"0","taggable":"0"}',
-                'display_name' => 'Recibo',
-                'edit' => 0,
+                'details' => '{"model":"App\\\\Models\\\\Receipt","table":"receipts","type":"belongsTo","column":"receipt_id","key":"id","label":"id","pivot_table":"calendars","pivot":"0","taggable":"0"}',
+                'display_name' => 'Venta',
+                'edit' => 1,
                 'field' => 'calendar_belongsto_receipt_relationship',
                 'id' => 222,
                 'order' => 12,
