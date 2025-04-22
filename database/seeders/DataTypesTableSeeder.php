@@ -323,7 +323,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'expenses',
-                'updated_at' => '2025-04-21 22:52:11',
+                'updated_at' => '2025-04-21 23:01:16',
             ),
             17 => 
             array (
@@ -341,7 +341,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'dates',
-                'updated_at' => '2025-04-21 22:51:48',
+                'updated_at' => '2025-04-21 23:01:07',
             ),
             18 => 
             array (
@@ -359,7 +359,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'cash-audits',
-                'updated_at' => '2025-04-21 22:51:14',
+                'updated_at' => '2025-04-21 23:00:44',
             ),
             19 => 
             array (
@@ -395,7 +395,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'calendars',
-                'updated_at' => '2025-04-21 22:51:00',
+                'updated_at' => '2025-04-21 23:00:58',
             ),
             21 => 
             array (

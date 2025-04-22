@@ -2565,13 +2565,13 @@ class DataRowsTableSeeder extends Seeder
             ),
             159 => 
             array (
-                'add' => 1,
+                'add' => 0,
                 'browse' => 1,
                 'data_type_id' => 23,
                 'delete' => 1,
                 'details' => '{"validation":{"rule":"max:6","messages":{"max":"El campo :attribute solo acepta un numero maximo de caracteres de  :max."}}}',
                 'display_name' => 'Gastos totales',
-                'edit' => 1,
+                'edit' => 0,
                 'field' => 'total_bills',
                 'id' => 161,
                 'order' => 5,
@@ -2581,13 +2581,13 @@ class DataRowsTableSeeder extends Seeder
             ),
             160 => 
             array (
-                'add' => 1,
+                'add' => 0,
                 'browse' => 1,
                 'data_type_id' => 23,
                 'delete' => 1,
                 'details' => '{"validation":{"rule":"max:6","messages":{"max":"El campo :attribute solo acepta un numero maximo de caracteres de  :max."}}}',
                 'display_name' => 'Ingresos totales',
-                'edit' => 1,
+                'edit' => 0,
                 'field' => 'total_ingress',
                 'id' => 162,
                 'order' => 6,
@@ -3077,7 +3077,7 @@ class DataRowsTableSeeder extends Seeder
             ),
             191 => 
             array (
-                'add' => 1,
+                'add' => 0,
                 'browse' => 0,
                 'data_type_id' => 23,
                 'delete' => 1,
@@ -3093,7 +3093,7 @@ class DataRowsTableSeeder extends Seeder
             ),
             192 => 
             array (
-                'add' => 1,
+                'add' => 0,
                 'browse' => 0,
                 'data_type_id' => 22,
                 'delete' => 1,
@@ -3173,7 +3173,7 @@ class DataRowsTableSeeder extends Seeder
             ),
             197 => 
             array (
-                'add' => 1,
+                'add' => 0,
                 'browse' => 0,
                 'data_type_id' => 21,
                 'delete' => 1,
@@ -3221,7 +3221,7 @@ class DataRowsTableSeeder extends Seeder
             ),
             200 => 
             array (
-                'add' => 1,
+                'add' => 0,
                 'browse' => 0,
                 'data_type_id' => 29,
                 'delete' => 1,
