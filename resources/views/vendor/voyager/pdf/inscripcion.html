@@ -1,313 +1,233 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Formulario de Adiestramiento</title>
-  <style>
-    @page {
-      size: letter;
-      margin: 0.5in;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f7f9fa;
-      margin: 0;
-      padding: 0.5in;
-      color: #2c3e50;
-      box-sizing: border-box;
-      font-size: 9pt;
-    }
-
-    .formulario {
-      width: 100%;
-      background: #fff;
-      padding: 10px 15px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 8px;
-      font-size: 16pt;
-    }
-
-    .section {
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-size: 10pt;
-      font-weight: bold;
-      background-color: #ecf0f1;
-      padding: 4px;
-      border-radius: 5px;
-      border-left: 4px solid #3498db;
-      margin-bottom: 6px;
-    }
-
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 4px;
-    }
-
-    .field {
-      flex: 1;
-      min-width: 110px;
-      margin-right: 6px;
-      margin-bottom: 4px;
-    }
-
-    .field.full {
-      flex: 100%;
-    }
-
-    .field label {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 2px;
-    }
-
-    .value {
-      padding: 3px 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      background-color: #fefefe;
-    }
-
-    .checkbox-group {
-      display: flex;
-      gap: 8px;
-      font-size: 9pt;
-    }
-
-    .checkbox-group label {
-      display: flex;
-      align-items: center;
-    }
-
-    .checkbox-group input {
-      margin-right: 4px;
-    }
-
-    .sign-box {
-      height: 30px;
-      border-bottom: 1px solid #333;
-      margin-top: 5px;
-    }
-
-    @media print {
-      body {
-        background: none;
-        padding: 0.5in;
-      }
-
-      .formulario {
-        box-shadow: none;
-        border: none;
-        page-break-inside: avoid;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="formulario">
-    <h1>ADIESTRAMIENTO</h1>
-
-    <!-- Datos del propietario -->
-    <div class="section">
-      <div class="section-title">Datos del propietario</div>
-      <div class="row">
-        <div class="field">
-          <label>Nombre</label>
-          <div class="value">Yves Ortiz</div>
-        </div>
-        <div class="field">
-          <label>Teléfono</label>
-          <div class="value">9515929322</div>
-        </div>
-        <div class="field full">
-          <label>Dirección</label>
-          <div class="value">Díaz Quintas #411</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="field full">
-          <label>Observaciones generales</label>
-          <div class="value" style="height: 25px;"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Datos del alumno -->
-    <div class="section">
-      <div class="section-title">Datos del alumno</div>
-
-      <div class="row">
-        <div class="field">
-          <label>Nombre</label>
-          <div class="value">Lukas</div>
-        </div>
-        <div class="field">
-          <label>Carnet</label>
-          <div class="value"></div>
-        </div>
-        <div class="field">
-          <label>Collar</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox" checked> Sí</label>
-            <label><input type="checkbox"> No</label>
-          </div>
-        </div>
-        <div class="field">
-          <label>Color/Tipo</label>
-          <div class="value">Rojo</div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="field">
-          <label>Raza</label>
-          <div class="value">Criollo</div>
-        </div>
-        <div class="field">
-          <label>Peso</label>
-          <div class="value">12 kg</div>
-        </div>
-        <div class="field">
-          <label>¿Se le puede dar premios?</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox" checked> Sí</label>
-            <label><input type="checkbox"> No</label>
-          </div>
-        </div>
-        <div class="field">
-          <label>¿Ladra mucho?</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox"> Sí</label>
-            <label><input type="checkbox" checked> No</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="field">
-          <label>Alimento</label>
-          <div class="value">Dog Chow</div>
-        </div>
-        <div class="field">
-          <label>Porción</label>
-          <div class="value">Libre demanda</div>
-        </div>
-        <div class="field">
-          <label>Juguetes</label>
-          <div class="value">Pelota, cuerda</div>
-        </div>
-        <div class="field">
-          <label>¿Convivencia con otros?</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox" checked> Sí</label>
-            <label><input type="checkbox"> No</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="field">
-          <label>¿Se le puede bañar?</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox" checked> Sí</label>
-            <label><input type="checkbox"> No</label>
-          </div>
-        </div>
-        <div class="field">
-          <label>¿Dónde duerme?</label>
-          <div class="value">En cama dentro de casa</div>
-        </div>
-        <div class="field">
-          <label>¿Dónde hace del baño?</label>
-          <div class="value">Patio</div>
-        </div>
-        <div class="field">
-          <label>Frecuencia de paseo</label>
-          <div class="value">2 veces al día</div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="field full">
-          <label>Médico actual</label>
-          <div class="value">MedVet</div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="field">
-          <label>Alergias</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox"> Sí</label>
-            <label><input type="checkbox" checked> No</label>
-          </div>
-        </div>
-        <div class="field">
-          <label>Fracturas</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox"> Sí</label>
-            <label><input type="checkbox" checked> No</label>
-          </div>
-        </div>
-        <div class="field">
-          <label>Cicatrices</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox"> Sí</label>
-            <label><input type="checkbox" checked> No</label>
-          </div>
-        </div>
-        <div class="field">
-          <label>Hospitalizaciones</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox"> Sí</label>
-            <label><input type="checkbox" checked> No</label>
-          </div>
-        </div>
-        <div class="field">
-          <label>Conductas agresivas</label>
-          <div class="checkbox-group">
-            <label><input type="checkbox"> Sí</label>
-            <label><input type="checkbox" checked> No</label>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="field">
-          <label>Costo por semana</label>
-          <div class="value"></div>
-        </div>
-        <div class="field">
-          <label>Fecha de ingreso</label>
-          <div class="value">17 Marzo 2025</div>
-        </div>
-        <div class="field">
-          <label>Duración del curso</label>
-          <div class="value">2 - 3 meses</div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="field">
-          <label>Firma de recepción</label>
-          <div class="sign-box"></div>
-        </div>
-        <div class="field">
-          <label>Firma del propietario</label>
-          <div class="sign-box"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+			crossorigin="anonymous"
+		/>
+		<title>Adiestramiento</title>
+		<style>
+			.row > * {
+				padding-right: 2px !important;
+				padding-left: 2px !important;
+			}
+			.title {
+				font-size: 22pt;
+				font-weight: bold;
+				text-align: center;
+				margin-top: 8%;
+			}
+			.logo {
+				width: 20vw;
+				height: auto;
+			}
+			.box {
+				border: 2px solid black;
+				border-radius: 5px;
+				padding: 5px;
+				height: calc(100% - 10px);
+				margin: 5px 0px;
+			}
+			.box > div {
+				display: inline-flex;
+			}
+			.checks {
+				width: 40%;
+				display: flex;
+				flex-direction: column;
+			}
+			.radio-checks {
+				display: flex;
+				flex-direction: row;
+			}
+			.radio-option {
+				border: 1px solid black;
+				padding: 5px;
+				width: 50%;
+				margin-right: 2px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row header">
+				<div class="col-8 title">ADIESTRAMIENTO</div>
+				<div class="col-4">
+					<img
+						src="https://app.casawuauyacan.com.mx/settings/December2024/h3pCHPiE2jZjxTbItvU6.png"
+						alt="logo"
+						class="logo"
+					/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">Datos del propietario</div>
+				<div class="col-7">
+					<div class="box">Nombre: {{ $owner->name }}</div>
+				</div>
+				<div class="col-5">
+					<div class="box">Telefono: {{ $owner->phone }}</div>
+				</div>
+				<div class="col-12">
+					<div class="box">Direccion: {{ $owner->address }}</div>
+				</div>
+				<div class="col-5">
+					<div class="box">
+						Redes sociales:
+						<ul>
+							<li>Facebook: {{ $owner->facebook }}</li>
+							<li>Instagram: {{ $owner->instagram }}</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-7">
+					<div class="box">
+						Observaciones generales: {{ $owner->observations }}
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">Datos del alumno</div>
+				<div class="col-6">
+					<div class="box">Nombre: {{ $student->name }}</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						<div class="checks">
+							<div class="title-checks">Collar:</div>
+							<div class="radio-checks">
+								<div class="radio-option">SI X</div>
+								<div class="radio-option">NO X</div>
+							</div>
+						</div>
+						<div class="details-check">Especificar:</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">Carnet: {{ $student->name }}</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						<div class="checks">
+							<div class="title-checks">Alergias:</div>
+							<div class="radio-checks">
+								<div class="radio-option">SI X</div>
+								<div class="radio-option">NO X</div>
+							</div>
+						</div>
+						<div class="details-check">Especificar:</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="row box">
+						<div class="col-6">Raza: {{ $student->name }}</div>
+						<div class="col-6">Peso: {{ $student->birthdate }}</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						<div class="checks">
+							<div class="title-checks">Fracturas:</div>
+							<div class="radio-checks">
+								<div class="radio-option">SI X</div>
+								<div class="radio-option">NO X</div>
+							</div>
+						</div>
+						<div class="details-check">Especificar:</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="row box">
+						<div class="col-12">Alimento: {{ $student->name }}</div>
+						<div class="col-12" style="margin-top: 10px">
+							Porción: {{ $student->birthdate }}
+						</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						<div class="checks">
+							<div class="title-checks">Cicatrices:</div>
+							<div class="radio-checks">
+								<div class="radio-option">SI X</div>
+								<div class="radio-option">NO X</div>
+							</div>
+						</div>
+						<div class="details-check">Especificar:</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">Médico actual: {{ $student->name }}</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						<div class="checks">
+							<div class="title-checks">Hospitalizaciones:</div>
+							<div class="radio-checks">
+								<div class="radio-option">SI X</div>
+								<div class="radio-option">NO X</div>
+							</div>
+						</div>
+						<div class="details-check">Especificar:</div>
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						Costo por semana: {{ $student->name }}
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						<div class="checks">
+							<div class="title-checks">Conductas Agresivas:</div>
+							<div class="radio-checks">
+								<div class="radio-option">SI X</div>
+								<div class="radio-option">NO X</div>
+							</div>
+						</div>
+						<div class="details-check">Especificar:</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<div class="box">
+						Fecha de ingreso: {{ $student->name }}
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						Duración del curso: {{ $student->name }}
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						Firma de recepción:
+						<br />
+						<br />
+						<br />
+						______________________
+						<br />
+						{{ $user }}
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						Firma del propietario:
+						<br />
+						<br />
+						<br />
+						______________________
+						<br />
+						{{ $user }}
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
