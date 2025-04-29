@@ -79,7 +79,6 @@ class DashboardController extends VoyagerBaseController
 			'sex' => 'required',
 			'weight' => 'required',
 			'necklace' => 'required',
-			'date' => 'required',
 			'service_unit' => 'required',
 			'service_id' => 'required',
 			'payment_method_id' => 'required',
@@ -96,8 +95,8 @@ class DashboardController extends VoyagerBaseController
 			'weight.required' => 'El peso es requerido',
 			'necklace.required' => 'El collar es requerido',
 			'service_unit.required' => 'La unidad por servicio es requerido',
-			'service.required' => 'El servicio es requerido',
-			'payment_method.required' => 'El método de pago es requerido',
+			'service_id.required' => 'El servicio es requerido',
+			'payment_method_id.required' => 'El método de pago es requerido',
 		]);
 
 		try {

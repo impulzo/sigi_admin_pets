@@ -450,7 +450,7 @@
 						<option value="regular" {{ isset($pet) && $pet->behavior_dogs == 'regular' ? 'selected' : '' }}>Regular</option>
 						<option value="mala" {{ isset($pet) && $pet->behavior_dogs == 'mala' ? 'selected' : '' }}>Malo</option>
 					</select>
-					</select>
+
 				</div>
 
 				<div  class="col-md-4" style="display: flex; gap: 8px;">
@@ -484,9 +484,6 @@
 			Generar recibo
 	</h1>
 			<div style="gap: 8px;">
-			<!-- @csrf
-			@method('POST') -->
-
 				<div class="row" style=" gap: 8px; margin-top: 15px;">
 
 					<div class="col-md-6" style="display: flex; gap: 10px; margin-top: 15px;">
