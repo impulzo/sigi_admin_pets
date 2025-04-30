@@ -100,22 +100,23 @@
 			<div class="row">
 				<div class="col-12">Datos del alumno</div>
 				<div class="col-6">
-					<div class="box">Nombre: {{ $receipt->pet->name }}</div>
+					<div class="row box">
+						<div class="col-6">Nombre: {{ $receipt->pet->name }}</div>
+						<div class="col-6">Sexo: {{ $receipt->pet->sex === 'masculino' ? 'Masculino' : 'Femenino' }}</div>
+					</div>
 				</div>
 				<div class="col-6">
 					<div class="box">
 						<div class="checks">
 							<div class="title-checks">Collar:</div>
 							<div class="radio-checks">
-								<div class="radio-option">
+								<div class="radio-option" style="width: 50px">
 									SI
-									<?= $receipt->pet->necklace == 1 ? 'X' : ''
-									?>
+									{{ $receipt->pet->necklace == 1 ? 'X' : ''}}
 								</div>
-								<div class="radio-option">
+								<div class="radio-option" style="width: 60px">
 									NO
-									<?= $receipt->pet->necklace == 0 ? 'X' : ''
-									?>
+									{{ $receipt->pet->necklace == 0 ? 'X' : ''}}
 								</div>
 							</div>
 						</div>
@@ -132,15 +133,13 @@
 						<div class="checks">
 							<div class="title-checks">Alergias:</div>
 							<div class="radio-checks">
-								<div class="radio-option">
+								<div class="radio-option" style="width: 50px">
 									SI
-									<?= $receipt->pet->allergy == 1 ? 'X' : ''
-									?>
+									{{ $receipt->pet->allergy == 1 ? 'X' : ''}}
 								</div>
-								<div class="radio-option">
+								<div class="radio-option" style="width: 60px">
 									NO
-									<?= $receipt->pet->allergy == 0 ? 'X' : ''
-									?>
+									{{ $receipt->pet->allergy == 0 ? 'X' : ''}}
 								</div>
 							</div>
 						</div>
@@ -152,9 +151,7 @@
 				<div class="col-6">
 					<div class="row box">
 						<div class="col-6">Raza: {{ $receipt->pet->race }}</div>
-						<div class="col-6">
-							Peso: {{ $receipt->pet->weight}}
-						</div>
+						<div class="col-6">Peso: {{ $receipt->pet->weight}}</div>
 					</div>
 				</div>
 				<div class="col-6">
@@ -162,15 +159,13 @@
 						<div class="checks">
 							<div class="title-checks">Fracturas:</div>
 							<div class="radio-checks">
-								<div class="radio-option">
+								<div class="radio-option" style="width: 50px">
 									SI
-									<?= $receipt->pet->fracture == 1 ? 'X' : ''
-									?>
+									{{ $receipt->pet->fracture == 1 ? 'X' : ''}}
 								</div>
-								<div class="radio-option">
+								<div class="radio-option" style="width: 60px">
 									NO
-									<?= $receipt->pet->fracture == 0 ? 'X' : ''
-									?>
+									{{ $receipt->pet->fracture == 0 ? 'X' : ''}}
 								</div>
 							</div>
 						</div>
@@ -180,20 +175,20 @@
 					</div>
 				</div>
 				<div class="col-6">
-					<div class="row box">Dieta (Alimento y Porción):</div>
+					<div class="row box">Dieta (Alimento y Porción): {{$receipt->pet->food}}</div>
 				</div>
 				<div class="col-6">
 					<div class="box">
 						<div class="checks">
 							<div class="title-checks">Cicatrices:</div>
 							<div class="radio-checks">
-								<div class="radio-option">
+								<div class="radio-option" style="width: 50px">
 									SI
-									<?= $receipt->pet->scar == 1 ? 'X' : '' ?>
+									{{ $receipt->pet->scar == 1 ? 'X' : '' }}
 								</div>
-								<div class="radio-option">
+								<div class="radio-option" style="width: 60px">
 									NO
-									<?= $receipt->pet->scar == 0 ? 'X' : '' ?>
+									{{ $receipt->pet->scar == 0 ? 'X' : '' }}
 								</div>
 							</div>
 						</div>
@@ -210,17 +205,15 @@
 				<div class="col-6">
 					<div class="box">
 						<div class="checks">
-							<div class="title-checks">Hospitalizaciones:</div>
+							<div class="title-checks">Hospitaliza-</br>ciones:</div>
 							<div class="radio-checks">
-								<div class="radio-option">
+								<div class="radio-option" style="width: 50px">
 									SI
-									<?= $receipt->pet->hospitalization == 1 ?
-									'X' : '' ?>
+									{{ $receipt->pet->hospitalization == 1 ?'X' : '' }}
 								</div>
-								<div class="radio-option">
+								<div class="radio-option" style="width: 60px">
 									NO
-									<?= $receipt->pet->hospitalization == 0 ?
-									'X' : '' ?>
+									{{ $receipt->pet->hospitalization == 0 ?'X' : '' }}
 								</div>
 							</div>
 						</div>
@@ -240,15 +233,13 @@
 						<div class="checks">
 							<div class="title-checks">Conductas Agresivas:</div>
 							<div class="radio-checks">
-								<div class="radio-option">
+								<div class="radio-option" style="width: 50px">
 									SI
-									<?= $receipt->pet->is_aggressive == 1 ? 'X'
-									: '' ?>
+									{{ $receipt->pet->is_aggressive == 1 ? 'X': '' }}
 								</div>
-								<div class="radio-option">
+								<div class="radio-option" style="width: 60px">
 									NO
-									<?= $receipt->pet->is_aggressive == 0 ? 'X'
-									: '' ?>
+									{{ $receipt->pet->is_aggressive == 0 ? 'X': '' }}
 								</div>
 							</div>
 						</div>
@@ -261,16 +252,14 @@
 			</div>
 			<div class="row">
 				<div class="col-6">
-					<div class="box">Costo:</div>
+					<div class="box">Costo: {{$receipt->amount}}</div>
 				</div>
 				<div class="col-6">
-					<div class="box">Duración:</div>
+					<div class="box">Duración: {{$receipt->service_unit}}</div>
 				</div>
 				<div class="col-6">
 					<div class="box">
 						Firma de recepción:
-						<br />
-						<br />
 						<br />
 						______________________
 						<br />
@@ -281,8 +270,6 @@
 				<div class="col-6">
 					<div class="box">
 						Firma del propietario:
-						<br />
-						<br />
 						<br />
 						______________________
 						<br />
@@ -295,60 +282,55 @@
 			<div style="break-after: page;"></div>
 			<div class="row">
 				<div class="col-6">
-					Paseos por semana: {{ $receipt->pet->walks_per_week }}
+					Paseos por semana: {{ $receipt->pet->walk }}
 				</div>
 				<div class="col-3">
-					<div class="box">Mañana:</div>
+					<div class="box">Mañana: {{ $receipt->pet->morning}}</div>
 				</div>
 				<div class="col-3">
-					<div class="box">Tarde:</div>
+					<div class="box">Tarde: {{ $receipt->pet->afternoon}}</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-3">Horarios de comidas:</div>
 				<div class="col-3">
-					<div class="box">Mañana:</div>
+					<div class="box">Mañana: {{ $receipt->pet->other_morning}}</div>
 				</div>
 				<div class="col-3">
-					<div class="box">Tarde:</div>
+					<div class="box">Tarde: {{ $receipt->pet->other_afternoon}}</div>
 				</div>
 				<div class="col-3">
-					<div class="box">Noche:</div>
+					<div class="box">Noche: {{ $receipt->pet->night}}</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-6">
 					<div class="box">
-						Lugar que ocupa en casa: {{ $receipt->pet->place_in_home
-						}}
+						Lugar que ocupa en casa: {{ $receipt->pet->house_place}}
 					</div>
 				</div>
 				<div class="col-6">
 					<div class="box">
-						Con cuantas personas vive: {{
-						$receipt->pet->place_in_home }}
+						Con cuantas personas vive: {{$receipt->pet->housemates }}
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-6">
 					<div class="box">
-						Reglas de convivencia dentro de casa: {{
-						$receipt->pet->pets_in_home }}
+						Reglas de convivencia dentro de casa: {{ $receipt->pet->indoor}}
 					</div>
 				</div>
 				<div class="col-6">
 					<div class="box">
-						Reglas de convivencia fuera de casa (paseos): {{
-						$receipt->pet->time_alone }}
+						Reglas de convivencia fuera de casa (paseos): {{ $receipt->pet->outdoor}}
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-12">
 					<div class="box">
-						Recomendaciones generales: {{
-						$receipt->pet->rules_with_other_pets }}
+						Recomendaciones generales: {{ $receipt->pet->recommendation}}
 					</div>
 				</div>
 			</div>
@@ -358,9 +340,8 @@
 					<div class="checks">
 						<div class="title-checks">Comprado:</div>
 						<div class="radio-checks">
-							<div class="radio-option">
-								@php $receipt->pet->necklace == 1 ? 'X' : ''
-								@endphp
+							<div class="radio-option" style="width: 50px; height: 30px;">
+							{{ $receipt->pet->arrive === 'comprado' ? 'X' : '' }}
 							</div>
 						</div>
 					</div>
@@ -369,9 +350,8 @@
 					<div class="checks">
 						<div class="title-checks">Adopción:</div>
 						<div class="radio-checks">
-							<div class="radio-option">
-								@php $receipt->pet->necklace == 1 ? 'X' : ''
-								@endphp
+							<div class="radio-option" style="width: 50px; height: 30px;">
+							{{ $receipt->pet->arrive === 'adopcion' ? 'X' : '' }}
 							</div>
 						</div>
 					</div>
@@ -380,9 +360,8 @@
 					<div class="checks">
 						<div class="title-checks">Regalo:</div>
 						<div class="radio-checks">
-							<div class="radio-option">
-								@php $receipt->pet->necklace == 1 ? 'X' : ''
-								@endphp
+							<div class="radio-option" style="width: 50px; height: 30px;">
+							{{ $receipt->pet->arrive === 'regalo' ? 'X' : '' }}
 							</div>
 						</div>
 					</div>
@@ -391,9 +370,8 @@
 					<div class="checks">
 						<div class="title-checks">Crianza:</div>
 						<div class="radio-checks">
-							<div class="radio-option">
-								@php $receipt->pet->necklace == 1 ? 'X' : ''
-								@endphp
+							<div class="radio-option" style="width: 50px; height: 30px;">
+							{{ $receipt->pet->arrive === 'crianza' ? 'X' : '' }}
 							</div>
 						</div>
 					</div>
@@ -405,21 +383,18 @@
 					<div class="box row">
 						<div class="col-12">Perros:</div>
 						<div class="radio-checks col-4">
-							<div class="radio-option">
-								Bueno: @php $receipt->pet->necklace == 1 ? 'X' :
-								'' @endphp
+							<div class="radio-option" style="width: 90px">
+								Bueno: {{ $receipt->pet->behavior_dogs === 'buena' ? 'X' : '' }}
 							</div>
 						</div>
 						<div class="radio-checks col-4">
-							<div class="radio-option">
-								Regular: @php $receipt->pet->necklace == 1 ? 'X'
-								: '' @endphp
+							<div class="radio-option" style="width: 90px">
+								Regular: {{ $receipt->pet->behavior_dogs === 'regular' ? 'X' : '' }}
 							</div>
 						</div>
 						<div class="radio-checks col-4">
-							<div class="radio-option">
-								Malo: @php $receipt->pet->necklace == 1 ? 'X' :
-								'' @endphp
+							<div class="radio-option" style="width: 90px">
+								Malo: {{ $receipt->pet->behavior_dogs === 'mala' ? 'X' : '' }}
 							</div>
 						</div>
 					</div>
@@ -428,21 +403,18 @@
 					<div class="box row">
 						<div class="col-12">Personas:</div>
 						<div class="radio-checks col-4">
-							<div class="radio-option">
-								Bueno: @php $receipt->pet->necklace == 1 ? 'X' :
-								'' @endphp
+							<div class="radio-option" style="width: 90px">
+								Bueno: {{ $receipt->pet->behavior_people === 'buena' ? 'X' : '' }}
 							</div>
 						</div>
 						<div class="radio-checks col-4">
-							<div class="radio-option">
-								Regular: @php $receipt->pet->necklace == 1 ? 'X'
-								: '' @endphp
+							<div class="radio-option" style="width: 90px">
+								Regular: {{ $receipt->pet->behavior_people === 'regular' ? 'X' : '' }}
 							</div>
 						</div>
 						<div class="radio-checks col-4">
-							<div class="radio-option">
-								Malo: @php $receipt->pet->necklace == 1 ? 'X' :
-								'' @endphp
+							<div class="radio-option" style="width: 90px">
+								Malo: {{ $receipt->pet->behavior_people === 'mala' ? 'X' : '' }}
 							</div>
 						</div>
 					</div>
@@ -453,13 +425,13 @@
 					<div class="box">
 						Ha estado en algún curso de entrenamiento?:
 						<div class="radio-option" style="width: 50px">
-							SI: X
+							SI: {{ $receipt->pet->training == 1 ? 'X' : ''}}
 						</div>
 						<div class="radio-option" style="width: 60px">
-							NO: X
+							NO: {{ $receipt->pet->training == 0 ? 'X' : ''}}
 						</div>
 						<br />
-						Bajo que sistema de entreno:
+						Bajo que sistema de entreno: {{ $receipt->pet->training_details }}
 					</div>
 				</div>
 			</div>

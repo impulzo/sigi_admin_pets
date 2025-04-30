@@ -27,5 +27,6 @@ class AppServiceProvider extends ServiceProvider
         Voyager::addAction(\App\Actions\HistoryButton::class);
 		Voyager::addAction(\App\Actions\MedicalHistoryButton::class);
 		Voyager::addAction(\App\Actions\VaccineButton::class);
+		Voyager::addAction(\App\Actions\InscripcionButton::class);
     }
 }

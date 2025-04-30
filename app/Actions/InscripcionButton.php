@@ -4,7 +4,7 @@ namespace App\Actions;
 
 use TCG\Voyager\Actions\AbstractAction;
 
-class InscriptionButton extends AbstractAction
+class InscripcionButton extends AbstractAction
 {
     public function getTitle()
     {
