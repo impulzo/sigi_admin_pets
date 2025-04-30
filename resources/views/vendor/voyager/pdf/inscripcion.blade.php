@@ -9,7 +9,7 @@
 			integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
 			crossorigin="anonymous"
 		/>
-		<title>Adiestramiento</title>
+		<title>ADIESTRAMIENTO</title>
 		<style>
 			.row > * {
 				padding-right: 2px !important;
@@ -55,7 +55,7 @@
 	<body>
 		<div class="container">
 			<div class="row header">
-				<div class="col-8 title">ADIESTRAMIENTO</div>
+				<div class="col-8 title">FORMATO DE INSCRIPCIÓN</div>
 				<div class="col-4">
 					<img
 						src="https://app.casawuauyacan.com.mx/settings/December2024/h3pCHPiE2jZjxTbItvU6.png"
@@ -67,65 +67,65 @@
 			<div class="row">
 				<div class="col-12">Datos del propietario</div>
 				<div class="col-7">
-					<div class="box">Nombre: {{ $owner->name }}</div>
+					<div class="box">Nombre: {{ $receipt->customer->full_name }}</div>
 				</div>
 				<div class="col-5">
-					<div class="box">Telefono: {{ $owner->phone }}</div>
+					<div class="box">Telefono: {{ $receipt->customer->phone }}</div>
 				</div>
 				<div class="col-12">
-					<div class="box">Direccion: {{ $owner->address }}</div>
+					<div class="box">Direccion: {{ $receipt->customer->address }}</div>
 				</div>
 				<div class="col-5">
 					<div class="box">
 						Redes sociales:
 						<ul>
-							<li>Facebook: {{ $owner->facebook }}</li>
-							<li>Instagram: {{ $owner->instagram }}</li>
+							<li>Facebook:</li>
+							<li>Instagram: </li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-7">
 					<div class="box">
-						Observaciones generales: {{ $owner->observations }}
+						Observaciones generales: {{ $receipt->pet->observation }}
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-12">Datos del alumno</div>
 				<div class="col-6">
-					<div class="box">Nombre: {{ $student->name }}</div>
+					<div class="box">Nombre: {{ $receipt->pet->name }}</div>
 				</div>
 				<div class="col-6">
 					<div class="box">
 						<div class="checks">
 							<div class="title-checks">Collar:</div>
 							<div class="radio-checks">
-								<div class="radio-option">SI X</div>
-								<div class="radio-option">NO X</div>
+								<div class="radio-option">SI <?= $receipt->pet->necklace == 1 ? 'X' : '' ?></div>
+								<div class="radio-option">NO <?= $receipt->pet->necklace == 0 ? 'X' : '' ?></div>
 							</div>
 						</div>
-						<div class="details-check">Especificar:</div>
+						<div class="details-check">Especificar: {{ $receipt->pet->necklace_details }}</div>
 					</div>
 				</div>
 				<div class="col-6">
-					<div class="box">Carnet: {{ $student->name }}</div>
+					<div class="box">Carnet:</div>
 				</div>
 				<div class="col-6">
 					<div class="box">
 						<div class="checks">
 							<div class="title-checks">Alergias:</div>
 							<div class="radio-checks">
-								<div class="radio-option">SI X</div>
-								<div class="radio-option">NO X</div>
+								<div class="radio-option">SI <?= $receipt->pet->allergy == 1 ? 'X' : '' ?></div>
+								<div class="radio-option">NO <?= $receipt->pet->allergy == 0 ? 'X' : '' ?></div>
 							</div>
 						</div>
-						<div class="details-check">Especificar:</div>
+						<div class="details-check">Especificar: {{ $receipt->pet->allergy_details }}</div>
 					</div>
 				</div>
 				<div class="col-6">
 					<div class="row box">
-						<div class="col-6">Raza: {{ $student->name }}</div>
-						<div class="col-6">Peso: {{ $student->birthdate }}</div>
+						<div class="col-6">Raza: {{ $receipt->pet->race }}</div>
+						<div class="col-6">Peso: {{ $receipt->pet->weight}}</div>
 					</div>
 				</div>
 				<div class="col-6">
@@ -133,18 +133,18 @@
 						<div class="checks">
 							<div class="title-checks">Fracturas:</div>
 							<div class="radio-checks">
-								<div class="radio-option">SI X</div>
-								<div class="radio-option">NO X</div>
+								<div class="radio-option">SI <?= $receipt->pet->fracture == 1 ? 'X' : '' ?></div>
+								<div class="radio-option">NO <?= $receipt->pet->fracture == 0 ? 'X' : '' ?></div>
 							</div>
 						</div>
-						<div class="details-check">Especificar:</div>
+						<div class="details-check">Especificar: {{$receipt->pet->fracture_details}}</div>
 					</div>
 				</div>
 				<div class="col-6">
 					<div class="row box">
-						<div class="col-12">Alimento: {{ $student->name }}</div>
+						<div class="col-12">Alimento:</div>
 						<div class="col-12" style="margin-top: 10px">
-							Porción: {{ $student->birthdate }}
+							Porción:
 						</div>
 					</div>
 				</div>
@@ -153,31 +153,31 @@
 						<div class="checks">
 							<div class="title-checks">Cicatrices:</div>
 							<div class="radio-checks">
-								<div class="radio-option">SI X</div>
-								<div class="radio-option">NO X</div>
+								<div class="radio-option">SI <?= $receipt->pet->scar == 1 ? 'X' : '' ?></div>
+								<div class="radio-option">NO <?= $receipt->pet->scar == 0 ? 'X' : '' ?></div>
 							</div>
 						</div>
-						<div class="details-check">Especificar:</div>
+						<div class="details-check">Especificar: {{$receipt->pet->scar_details}}</div>
 					</div>
 				</div>
 				<div class="col-6">
-					<div class="box">Médico actual: {{ $student->name }}</div>
+					<div class="box">Médico actual: {{$receipt->pet->medic}} </div>
 				</div>
 				<div class="col-6">
 					<div class="box">
 						<div class="checks">
 							<div class="title-checks">Hospitalizaciones:</div>
 							<div class="radio-checks">
-								<div class="radio-option">SI X</div>
-								<div class="radio-option">NO X</div>
+								<div class="radio-option">SI <?= $receipt->pet->hospitalization == 1 ? 'X' : '' ?></div>
+								<div class="radio-option">NO <?= $receipt->pet->hospitalization == 0 ? 'X' : '' ?></div>
 							</div>
 						</div>
-						<div class="details-check">Especificar:</div>
+						<div class="details-check">Especificar: {{$receipt->pet->hospitalization_details}}</div>
 					</div>
 				</div>
 				<div class="col-6">
 					<div class="box">
-						Costo por semana: {{ $student->name }}
+						Costo por semana:
 					</div>
 				</div>
 				<div class="col-6">
@@ -185,23 +185,23 @@
 						<div class="checks">
 							<div class="title-checks">Conductas Agresivas:</div>
 							<div class="radio-checks">
-								<div class="radio-option">SI X</div>
-								<div class="radio-option">NO X</div>
+								<div class="radio-option">SI <?= $receipt->pet->is_aggressive == 1 ? 'X' : '' ?></div>
+								<div class="radio-option">NO <?= $receipt->pet->is_aggressive == 0 ? 'X' : '' ?></div>
 							</div>
 						</div>
-						<div class="details-check">Especificar:</div>
+						<div class="details-check">Especificar: {{$receipt->pet->is_aggressive_details}}</div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-6">
 					<div class="box">
-						Fecha de ingreso: {{ $student->name }}
+						Fecha de ingreso: {{$receipt->pet->admission_date}}
 					</div>
 				</div>
 				<div class="col-6">
 					<div class="box">
-						Duración del curso: {{ $student->name }}
+						Duración del curso:
 					</div>
 				</div>
 				<div class="col-6">
@@ -212,7 +212,9 @@
 						<br />
 						______________________
 						<br />
-						{{ $user }}
+						{{ Auth::user()->name }}
+						<br />
+
 					</div>
 				</div>
 				<div class="col-6">
@@ -223,7 +225,8 @@
 						<br />
 						______________________
 						<br />
-						{{ $user }}
+						{{ $receipt->customer->full_name }}
+						<br />
 					</div>
 					</div>
 				</div>

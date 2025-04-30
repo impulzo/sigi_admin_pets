@@ -28,23 +28,12 @@ class ReceiptController extends VoyagerBaseController
 		return view('vendor.voyager.pdf.receipt_payment', compact('receipt'));
 	}
 
-	public function inscriptionPdf(Request $request, $id)
+	public function inscripcionPdf($id)
 	{
-		try {
+		$receipt = Receipt::find($id);
+		$customer = Customer::find($receipt->customer_id);
+		$pet = Pet::find($receipt->pet_id);
+		return view('vendor.voyager.pdf.inscripcion', compact('receipt'));
 
-        $customers = Customer::all();
-		$pets = Pet::all();
-		$receipt = Receipt::all();
-
-		} catch (ServiceException $ex) {
-			$dto->url = $request->path();
-			$dto->description = "STORE";
-			$dto->request = json_encode($request->json);
-			$dto->response = $ex->getMessage();
-			$dto->status = 500;
-			$this->logError($dto, $ex->getType());
-		} finally {
-			return view('vendor.voyager.pdf.receipt_inscription');
-		}
 	}
 }

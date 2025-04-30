@@ -44,8 +44,8 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('medicalhistory/{id}/vaccine', [MedicalHistoryController::class, 'vaccineByMedicalHistory'])
         ->name('medicalhistories.vaccine');
 	//receipt
-	Route::get('receipts/{id}/inscription', [ReceiptController::class, 'inscriptionPdf'])
-	->name('voyager.receipt.inscription');
+	Route::get('receipts/{id}/inscripcion', [ReceiptController::class, 'inscripcionPdf'])
+	->name('voyager.receipt.inscripcion');
 
 	Route::get('receipt/{id}/pdf', [ReceiptController::class, 'generateReceiptPdf'])
 	->name('voyager.receipt.pdf');

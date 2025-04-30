@@ -18,7 +18,7 @@ class InscriptionButton extends AbstractAction
 
     public function getDefaultRoute()
     {
-        return route('voyager.receipt.inscription', $this->data->id);
+        return route('voyager.receipt.inscripcion', $this->data->id);
     }
 
     public function shouldActionDisplayOnDataType()
