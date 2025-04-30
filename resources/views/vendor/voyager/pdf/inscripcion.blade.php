@@ -73,7 +73,7 @@
 				</div>
 				<div class="col-5">
 					<div class="box">
-						Telefono: {{ $receipt->customer->phone }}
+						Teléfono: {{ $receipt->customer->phone }}
 					</div>
 				</div>
 				<div class="col-12">
@@ -311,7 +311,7 @@
 				</div>
 				<div class="col-6">
 					<div class="box">
-						Con cuantas personas vive: {{$receipt->pet->housemates }}
+						¿Con cuántas personas vive? : {{$receipt->pet->housemates }}
 					</div>
 				</div>
 			</div>
@@ -335,7 +335,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-12">Como llego a casa:</div>
+				<div class="col-12">¿Como llego a casa? :</div>
 				<div class="col-3">
 					<div class="checks">
 						<div class="title-checks">Comprado:</div>
@@ -423,7 +423,7 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="box">
-						Ha estado en algún curso de entrenamiento?:
+						¿Ha estado en algún curso de entrenamiento? :
 						<div class="radio-option" style="width: 50px">
 							SI: {{ $receipt->pet->training == 1 ? 'X' : ''}}
 						</div>
