@@ -36,9 +36,10 @@
 				display: inline-flex;
 			}
 			.checks {
-				width: 40%;
+				width: 100%;
 				display: flex;
-				flex-direction: column;
+				flex-direction: row;
+				justify-content: space-between;
 			}
 			.radio-checks {
 				display: flex;
@@ -46,7 +47,7 @@
 			}
 			.radio-option {
 				border: 1px solid black;
-				padding: 5px;
+				padding: 2px;
 				width: 50%;
 				margin-right: 2px;
 			}
@@ -99,13 +100,13 @@
 			</div>
 			<div class="row">
 				<div class="col-12">Datos del alumno</div>
-				<div class="col-6">
+				<div class="col-5">
 					<div class="row box">
 						<div class="col-6">Nombre: {{ $receipt->pet->name }}</div>
 						<div class="col-6">Sexo: {{ $receipt->pet->sex === 'masculino' ? 'Masculino' : 'Femenino' }}</div>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-7">
 					<div class="box">
 						<div class="checks">
 							<div class="title-checks">Collar:</div>
@@ -125,10 +126,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-5">
 					<div class="box">Carnet:</div>
 				</div>
-				<div class="col-6">
+				<div class="col-7">
 					<div class="box">
 						<div class="checks">
 							<div class="title-checks">Alergias:</div>
@@ -148,13 +149,13 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-5">
 					<div class="row box">
 						<div class="col-6">Raza: {{ $receipt->pet->race }}</div>
 						<div class="col-6">Peso: {{ $receipt->pet->weight}}</div>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-7">
 					<div class="box">
 						<div class="checks">
 							<div class="title-checks">Fracturas:</div>
@@ -174,10 +175,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-5">
 					<div class="row box">Dieta (Alimento y Porción): {{$receipt->pet->food}}</div>
 				</div>
-				<div class="col-6">
+				<div class="col-7">
 					<div class="box">
 						<div class="checks">
 							<div class="title-checks">Cicatrices:</div>
@@ -197,12 +198,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-5">
 					<div class="box">
 						Médico actual: {{$receipt->pet->medic}}
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-7">
 					<div class="box">
 						<div class="checks">
 							<div class="title-checks">Hospitaliza-</br>ciones:</div>
@@ -223,12 +224,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-5">
 					<div class="box">
 						Fecha de ingreso: {{$receipt->pet->admission_date}}
 					</div>
 				</div>
-				<div class="col-6">
+				<div class="col-7">
 					<div class="box">
 						<div class="checks">
 							<div class="title-checks">Conductas Agresivas:</div>
