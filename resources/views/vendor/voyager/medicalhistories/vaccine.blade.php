@@ -24,28 +24,28 @@
                             <table id="dataTable" class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Nombre</th>
-                                        <th>Fecha de aplicación</th>
-                                        <th>Siguiente aplicación</th>
-                                        <th>Dosis</th>
-                                        <th>¿Quién la aplicó?</th>
-                                        <th>Estatus</th>
+                                        <th>Fecha</th>
                                         <th>Detalles</th>
+										<th>Foto</th>
                                         <th>Mascota</th>
                                         <th>Acciones</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($data as $item)
                                         <tr>
-                                            <td>{{ $item->type }}</td>
-                                            <td>{{ $item->application_date }}</td>
-                                            <td>{{ $item->next_application }}</td>
-                                            <td>{{ $item->dose }}</td>
-                                            <td>{{ $item->who_applied }}</td>
-                                            <td>{{ $item->status }}</td>
+                                            <td>{{ $item->date }}</td>
                                             <td>{{ $item->details }}</td>
-                                            <td>{{ $item->pet ? $item->pet->name : '' }}</td>
+											<td>
+												@if($item->photo)
+													<img src="{{ Voyager::image($item->photo) }}" style="width: 80px; height: auto; border-radius: 8px;">
+												@else
+													<span class="label label-default">Sin foto</span>
+												@endif
+											</td>
+
+                                            <td>{{ $petName }}</td>
                                             <td>
                                                 <form action="{{ route('voyager.vaccines.destroy', $item->id) }}" method="POST" class="delete-form" style="display:inline;">
                                                     @csrf

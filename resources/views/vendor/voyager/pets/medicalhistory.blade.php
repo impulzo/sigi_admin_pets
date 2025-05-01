@@ -35,7 +35,7 @@
                                 <tbody>
                                     @foreach ($data as $item)
                                         <tr>
-										    <td>{{ $item->pet ? $item->pet->name : '' }}</td>
+										    <td>{{ $petName}}</td>
 											<td>{{ $item->reason }}</td>
                                             <td>{{ $item->since_when }}</td>
                                             <td>{{ $item->symptoms }}</td>
