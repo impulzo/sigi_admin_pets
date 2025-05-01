@@ -251,7 +251,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'customers',
-                'updated_at' => '2025-04-19 21:50:38',
+                'updated_at' => '2025-04-30 18:31:44',
             ),
             13 => 
             array (
@@ -377,7 +377,7 @@ class DataTypesTableSeeder extends Seeder
                 'policy_name' => NULL,
                 'server_side' => 0,
                 'slug' => 'receipts',
-                'updated_at' => '2025-04-19 22:01:46',
+                'updated_at' => '2025-04-22 01:21:31',
             ),
             20 => 
             array (

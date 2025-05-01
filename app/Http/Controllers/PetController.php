@@ -8,7 +8,7 @@ use App\Services\Pet\GetMedicalHistoryService;
 use Illuminate\Http\Request;
 use TCG\Voyager\Http\Controllers\VoyagerBaseController;
 use App\Traits\LogErrorTrait;
-
+use App\Models\Pet;
 
 class PetController extends VoyagerBaseController
 {
@@ -21,7 +21,10 @@ class PetController extends VoyagerBaseController
 
     public function medicalhistoryByPet(Request $request, $id)
 	{
+		$pet = Pet::find($id);
+		$petName = $pet?->name;
 		$data = [];
+
 		try {
 			$dto = new LogErrorDto();
 
@@ -34,7 +37,7 @@ class PetController extends VoyagerBaseController
 			$dto->status = 500;
 			$this->logError($dto, $ex->getType());
 		} finally {
-			return view('vendor.voyager.pets.medicalhistory', compact('data'));
+			return view('vendor.voyager.pets.medicalhistory', compact('data', 'petName'));
 		}
 	}
 

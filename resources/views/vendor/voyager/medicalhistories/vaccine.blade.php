@@ -45,7 +45,7 @@
 												@endif
 											</td>
 
-                                            <td>{{ $item->pet ? $item->pet->name : '' }}</td>
+                                            <td>{{ $petName }}</td>
                                             <td>
                                                 <form action="{{ route('voyager.vaccines.destroy', $item->id) }}" method="POST" class="delete-form" style="display:inline;">
                                                     @csrf
