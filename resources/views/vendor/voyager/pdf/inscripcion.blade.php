@@ -258,27 +258,6 @@
 				<div class="col-6">
 					<div class="box">Duración: {{$receipt->service_unit}}</div>
 				</div>
-				<div class="col-6">
-					<div class="box">
-						Firma de recepción:
-						<br />
-						______________________
-						<br />
-						{{ Auth::user()->name }}
-						<br />
-					</div>
-				</div>
-				<div class="col-6">
-					<div class="box">
-						Firma del propietario:
-						<br />
-						______________________
-						<br />
-						{{ $receipt->customer->full_name }}
-						<br />
-					</div>
-				</div>
-			</div>
 			<!-- PAGE TWO-->
 			<div style="break-after: page;"></div>
 			<div class="row">
@@ -435,6 +414,27 @@
 						Bajo que sistema de entreno: {{ $receipt->pet->training_details }}
 					</div>
 				</div>
+				<div class="col-6">
+					<div class="box">
+						Firma de recepción:
+						<br />
+						______________________
+						<br />
+						{{ Auth::user()->name }}
+						<br />
+					</div>
+				</div>
+				<div class="col-6">
+					<div class="box">
+						Firma del propietario:
+						<br />
+						______________________
+						<br />
+						{{ $receipt->customer->full_name }}
+						<br />
+					</div>
+				</div>
+			</div>
 			</div>
 		</div>
 	</body>
