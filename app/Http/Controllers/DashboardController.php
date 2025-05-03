@@ -20,11 +20,19 @@ class DashboardController extends VoyagerBaseController
 	public function index(Request $request)
 	{
 		$customers = Customer::all();
-		$pets = Pet::all();
 		$payment_methods = PaymentMethod::all();
 		$services = Service::all();
 		$customer = null;
 		$pet = null;
+		$pets = collect();
+
+		if ($request->has('customer_id')) {
+			$customer = Customer::find($request->get('customer_id'));
+			if ($customer) {
+				$pets = $customer->pets;
+			}
+		}
+
 
 		if($request->has('action')){
 			if($request->has('customer_id')){
