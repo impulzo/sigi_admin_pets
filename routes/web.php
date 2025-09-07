@@ -30,6 +30,8 @@ Route::get('/',function(){
 Route::group(['prefix' => 'admin'], function () {
 	Voyager::routes();
 
+	Route::middleware('admin.user')->group(function () {
+
 	// redirect dashboard
 	Route::get('/',function(){
 		return redirect('/admin/dashboard');
@@ -58,6 +60,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 	Route::get('/dashboard/receipt/{id}', [ReceiptController::class, 'generateReceiptPdf'])
 	->name('voyager.receipt.pdf');
+	});
 
 });
 
