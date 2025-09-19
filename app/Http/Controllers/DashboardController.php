@@ -90,6 +90,7 @@ class DashboardController extends VoyagerBaseController
 			'service_unit' => 'required',
 			'service_id' => 'required',
 			'payment_method_id' => 'required',
+			'concepts' => 'required',
 		], [
 			'first_name.required' => 'El nombre es requerido',
 			'last_name.required' => 'Los apellidos son requeridos',
@@ -105,6 +106,7 @@ class DashboardController extends VoyagerBaseController
 			'service_unit.required' => 'La unidad por servicio es requerido',
 			'service_id.required' => 'El servicio es requerido',
 			'payment_method_id.required' => 'El método de pago es requerido',
+			'concepts.required' => 'El concepto es requerido',
 		]);
 
 		try {
@@ -202,6 +204,12 @@ class DashboardController extends VoyagerBaseController
 			$receiptData['pet_id'] = $petId;
 			$receiptData['user_id'] = auth()->id();
 			$receiptData['date'] = date('Y-m-d');
+
+			// Guardar los conceptos si existen
+			if ($request->has('concepts') && !empty($request->concepts)) {
+				$receiptData['concepts'] = $request->concepts;
+			}
+
 			$receipt = Receipt::create($receiptData);
 		} catch (\Exception $ex) {
 			$dto = new LogErrorDto();

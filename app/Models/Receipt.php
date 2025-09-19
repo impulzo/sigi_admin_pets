@@ -18,7 +18,7 @@ class Receipt extends Model
 		'date',
 		'customer_id',
 		'pet_id',
-
+		'concepts',
 	];
 
 	public function service()
