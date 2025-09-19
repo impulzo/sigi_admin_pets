@@ -105,6 +105,9 @@
                     <div class="section-title">Detalles del Servicio</div>
                     <p>Servicio: {{ $receipt->service->name }}</p>
                     <p>Unidades: {{ $receipt->service_unit }}</p>
+					@if($receipt->concepts)
+                        <p>Concepto(s): {{ implode(', ', json_decode($receipt->concepts, true)) }}</p>
+                    @endif
                     <p>Precio Unitario: ${{ number_format($receipt->service->cost, 2) }}</p>
                 </div>
             </div>
@@ -146,6 +149,14 @@
                     <div class="section-title">Detalles del Servicio</div>
                     <p>Servicio: {{ $receipt->service->name }}</p>
                     <p>Unidades: {{ $receipt->service_unit }}</p>
+                    @if($receipt->concepts)
+                        <p>Concepto(s):</p>
+                        <ul>
+                            @foreach(json_decode($receipt->concepts, true) as $concept)
+                                <li>{{ $concept }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
                     <p>Precio Unitario: ${{ number_format($receipt->service->cost, 2) }}</p>
                 </div>
             </div>

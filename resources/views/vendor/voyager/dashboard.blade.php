@@ -69,7 +69,7 @@
 					<option value="{{ $client->id }}" {{ isset($customer) && $client->id == $customer->id ? 'selected' : '' }}>{{ $client->full_name }}</option>
 				@endforeach
 			</select>
-			<button class="btn btn-primary" name="action" value="search_customer">Buscar cliente</button>
+			<button type="submit" class="btn btn-primary" name="action" value="search_customer">Buscar cliente</button>
 		</div>
 	</div>
 
@@ -490,7 +490,7 @@
 
 					<label for="service_id">Seleccione el servicio que desea contratar</label>
 						<select class="form-control" name="service_id" id="service_id">
-							<option value="">Seleccione su servicio</option>
+							<optºion value="">Seleccione su servicio</option>
 							@foreach ($services as $service)
 							<option value="{{ $service->id }}">{{ $service->name }}</option>
 							@endforeach
@@ -516,8 +516,87 @@
 					</div>
 				</div>
 			</div>
-	<button type="submit" class="btn btn-primary" name="action" value="save_data">Enviar</button>
+			<!-- Sección de Conceptos -->
+					<div class="row" style="margin-top: 20px;">
+						<div class="col-md-12">
+							<label for="concept">Conceptos</label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="concept" placeholder="Ingrese un concepto">
+								<span class="input-group-btn">
+									<button class="btn btn-primary" type="button" id="addConcept">
+										<i class="voyager-plus"></i> Añadir
+									</button>
+								</span>
+							</div>
+
+							<div id="conceptsList" style="margin-top: 15px;">
+								<!-- Aquí se agregarán los conceptos dinámicamente -->
+							</div>
+
+							<!-- Input oculto para almacenar los conceptos como JSON -->
+							<input type="hidden" name="concepts" id="conceptsInput">
+						</div>
+					</div>
+
+					<script>
+						document.addEventListener('DOMContentLoaded', function() {
+							const conceptInput = document.getElementById('concept');
+							const addButton = document.getElementById('addConcept');
+							const conceptsList = document.getElementById('conceptsList');
+							const conceptsInput = document.getElementById('conceptsInput');
+							let concepts = [];
+
+							// Cargar conceptos existentes si los hay
+							@if(isset($concepts) && is_array($concepts))
+								concepts = @json($concepts);
+								updateConceptsList();
+							@endif
+
+							addButton.addEventListener('click', function() {
+								const concept = conceptInput.value.trim();
+								if (concept !== '') {
+									concepts.push(concept);
+									conceptInput.value = '';
+									updateConceptsList();
+								}
+							});
+
+							// Agregar concepto al presionar Enter
+							conceptInput.addEventListener('keypress', function(e) {
+								if (e.key === 'Enter') {
+									e.preventDefault();
+									addButton.click();
+								}
+							});
+
+							function updateConceptsList() {
+								conceptsList.innerHTML = '';
+								concepts.forEach((concept, index) => {
+									const conceptElement = document.createElement('div');
+									conceptElement.className = 'alert alert-info alert-dismissible';
+									conceptElement.style.marginTop = '10px';
+									conceptElement.innerHTML = `
+										${concept}
+										<button type="button" class="close" data-dismiss="alert" onclick="removeConcept(${index})">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									`;
+									conceptsList.appendChild(conceptElement);
+								});
+
+								// Actualizar el input oculto con los conceptos como JSON
+								conceptsInput.value = JSON.stringify(concepts);
+							}
+
+							// Función global para eliminar conceptos
+							window.removeConcept = function(index) {
+								concepts.splice(index, 1);
+								updateConceptsList();
+							};
+						});
+					</script>
+					<button type="submit" class="btn btn-primary" name="action" value="save_data" style="margin-top: 20px;">Enviar</button>
+				</div>
 </form>
 
 @endsection
-
