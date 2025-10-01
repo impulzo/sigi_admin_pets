@@ -119,8 +119,6 @@ class DashboardController extends VoyagerBaseController
 			'indoor', 'outdoor', 'arrive', 'behavior_dogs', 'behavior_people',
 			'observation', 'recommendation', 'medic',
 		]);
-
-		// Normalizar booleanos
 		foreach (['is_aggressive', 'necklace', 'allergy', 'fracture', 'scar', 'hospitalization', 'training'] as $field) {
 			$data[$field] = intval($request->input($field, 0));
 		}
