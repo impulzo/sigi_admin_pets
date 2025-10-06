@@ -36,4 +36,9 @@ class Receipt extends Model
 		return $this->belongsTo(Pet::class);
 	}
 
+	public function services()
+	{
+		return $this->belongsToMany(Service::class, 'receipt_service', 'receipt_id', 'service_id');
+	}
+
 }

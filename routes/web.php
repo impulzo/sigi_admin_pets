@@ -63,5 +63,7 @@ Route::group(['prefix' => 'admin'], function () {
 	});
 
 });
+Route::get('/customers/{id}', [DashboardController::class, 'findCustomerById'])->name('customers.show');
+Route::get('/pets/{id}', [DashboardController::class, 'findPetById'])->name('customers.pets');
 
 Auth::routes();

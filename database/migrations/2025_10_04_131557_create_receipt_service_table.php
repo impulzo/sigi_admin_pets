@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnsToReceiptsTable extends Migration
+class CreateReceiptServiceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddColumnsToReceiptsTable extends Migration
      */
     public function up()
     {
-        Schema::table('receipts', function (Blueprint $table) {
-			$table->integer('pet_id');
+        Schema::create('receipt_service', function (Blueprint $table) {
+            $table->id();
+            $table->integer('receipt_id');
+            $table->integer('service_id');
+            $table->integer('service_unit');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddColumnsToReceiptsTable extends Migration
      */
     public function down()
     {
-        Schema::table('receipts', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('receipt_service');
     }
 }
