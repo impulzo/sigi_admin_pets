@@ -19,7 +19,6 @@ class CreateReceiptsTable extends Migration
 			$table->date('date');
 			$table->integer('customer_id');
 			$table->float('amount');
-			$table->integer('service_id');
 			$table->integer('payment_method_id');
             $table->timestamps();
         });

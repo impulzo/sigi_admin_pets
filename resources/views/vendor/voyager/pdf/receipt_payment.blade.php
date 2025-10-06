@@ -103,12 +103,12 @@
 
                 <div class="section">
                     <div class="section-title">Detalles del Servicio</div>
-                    <p>Servicio: {{ $receipt->service->name }}</p>
-                    <p>Unidades: {{ $receipt->service_unit }}</p>
 					@if($receipt->concepts)
-                        <p>Concepto(s): {{ implode(', ', json_decode($receipt->concepts, true)) }}</p>
-                    @endif
-                    <p>Precio Unitario: ${{ number_format($receipt->service->cost, 2) }}</p>
+                            <p>Concepto(s): {{ implode(', ', json_decode($receipt->concepts, true)) }}</p>
+                        @endif
+                    @foreach($receipt->services as $service)
+                        <p>Servicio: {{ $service->name }} .............. {{ $service->pivot->service_unit ?? $receipt->service_unit }} Unidad(es) </p>
+                    @endforeach
                 </div>
             </div>
 
@@ -145,19 +145,14 @@
                     <p>Raza: {{ $receipt->pet->race }}</p>
                 </div>
 
-                <div class="section">
+				<div class="section">
                     <div class="section-title">Detalles del Servicio</div>
-                    <p>Servicio: {{ $receipt->service->name }}</p>
-                    <p>Unidades: {{ $receipt->service_unit }}</p>
-                    @if($receipt->concepts)
-                        <p>Concepto(s):</p>
-                        <ul>
-                            @foreach(json_decode($receipt->concepts, true) as $concept)
-                                <li>{{ $concept }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
-                    <p>Precio Unitario: ${{ number_format($receipt->service->cost, 2) }}</p>
+					@if($receipt->concepts)
+                            <p>Concepto(s): {{ implode(', ', json_decode($receipt->concepts, true)) }}</p>
+                        @endif
+                    @foreach($receipt->services as $service)
+                        <p>Servicio: {{ $service->name }} .............. {{ $service->pivot->service_unit ?? $receipt->service_unit }} Unidad(es) </p>
+                    @endforeach
                 </div>
             </div>
 

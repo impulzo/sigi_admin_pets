@@ -38,7 +38,9 @@ class Receipt extends Model
 
 	public function services()
 	{
-		return $this->belongsToMany(Service::class, 'receipt_service', 'receipt_id', 'service_id');
+		return $this->belongsToMany(Service::class, 'receipt_service')
+                    ->withPivot('service_unit')
+                    ->withTimestamps();
 	}
 
 }
