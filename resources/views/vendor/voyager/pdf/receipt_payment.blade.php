@@ -123,7 +123,7 @@
         </div>
 
         <!-- Copia -->
-        <div class="receipt">
+        <!-- <div class="receipt">
             <div class="copy-label">COPIA CLIENTE</div>
             <div class="header">
                 <img src="https://app.casawuauyacan.com.mx/settings/December2024/h3pCHPiE2jZjxTbItvU6.png" alt="Logo" class="logo">
@@ -164,7 +164,8 @@
                 <p>Gracias por su preferencia</p>
                 <p>Este recibo es un comprobante de pago</p>
             </div>
-        </div>
+        </div> -->
     </div>
 </body>
 </html>
+
