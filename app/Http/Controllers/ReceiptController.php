@@ -36,4 +36,11 @@ class ReceiptController extends VoyagerBaseController
 		return view('vendor.voyager.pdf.inscripcion', compact('receipt'));
 
 	}
+
+	public function show(Request $request, $id)
+	{
+		$receipt = Receipt::with(['customer', 'pet', 'services'])->findOrFail($id);
+
+		return view('vendor.voyager.pdf.receipt_payment', compact('receipt'));
+	}
 }

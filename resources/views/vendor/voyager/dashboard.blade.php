@@ -2,6 +2,15 @@
 
 @section('content')
 <style>
+    .service-row {
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+    }
+    .service-row:not(:first-child) {
+        margin-top: 10px;
+    }
     .page-title {
         color: #ea7b23 !important;
     }
@@ -341,35 +350,37 @@
 			Generar recibo
 	</h1>
 			<div style="gap: 8px;">
-				<div class="row" style=" gap: 8px; margin-top: 15px;">
-
-					<div class="col-md-6" style="display: flex; gap: 10px; margin-top: 15px;">
-
-					<label for="service_id">Seleccione el servicio que desea contratar</label>
-						<select class="form-control" name="service_id" id="service_id">
-							<optºion value="">Seleccione su servicio</option>
-							@foreach ($services as $service)
-							<option value="{{ $service->id }}">{{ $service->name }}</option>
-							@endforeach
-						</select>
-					</div>
-
-					<div class="col-md-6" style="display: flex; gap: 20px; margin-bottom: 15px;">
-						<label for="payment_method_id">Seleccione su método de pago</label>
-						<select class="form-control" name="payment_method_id" id="payment_method_id">
+				<div class="row" style="margin-top: 15px;">
+					<div class="col-md-12" style="margin-bottom: 15px;">
+						<label for="payment_method_id">Método de pago</label>
+						<select class="form-control" name="payment_method_id" id="payment_method_id" required>
 							<option value="">Seleccione el método de pago</option>
 							@foreach ($payment_methods as $payment_method)
 							<option value="{{ $payment_method->id }}">{{ $payment_method->name }}</option>
 							@endforeach
 						</select>
 					</div>
-
 				</div>
-				<div class="row " style="">
+				<div class="row" style="margin-top: 10px;">
 
-					<div  class="col-md-6" style="display: flex; gap: 10px; margin-top: 15px;">
-						<label class="control-label" for="name">Unidad de servicio</label>
-						<input type="number" class="form-control" name="service_unit" placeholder="Unidad de servicio" value="">
+					<div id="services-container">
+						<div class="service-row row" style="margin-bottom: 15px; align-items: center;">
+							<div class="col-md-5" style="display: flex; gap: 10px;">
+								<label class="control-label">Servicio</label>
+								<select class="form-control" name="services[]" required>
+									<option value="">Seleccione un servicio</option>
+									@foreach($services as $service)
+									<option value="{{ $service->id }}" {{ $loop->first ? 'selected' : '' }}>{{ $service->name }}</option>									@endforeach
+								</select>
+							</div>
+							<div class="col-md-5" style="display: flex; gap: 10px;">
+								<label class="control-label">Unidades</label>
+								<input type="number" class="form-control" name="service_units[]" placeholder="Cantidad" required>
+							</div>
+							<div class="col-md-2">
+								<button type="button" class="btn btn-success add-service" style="display: none;">+</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -449,18 +460,64 @@
         });
 });
 					});
-						document.addEventListener('DOMContentLoaded', function() {
-							const conceptInput = document.getElementById('concept');
-							const addButton = document.getElementById('addConcept');
+						// Function to add new service row
+function addServiceRow() {
+    const container = document.getElementById('services-container');
+    const firstRow = document.querySelector('.service-row');
+    const newRow = firstRow.cloneNode(true);
+
+    // Clear values in the new row
+    const inputs = newRow.querySelectorAll('input, select');
+    inputs.forEach(input => {
+        input.value = '';
+        input.required = true;
+    });
+
+    // Show remove button for all rows except first
+    const removeBtn = document.createElement('button');
+    removeBtn.type = 'button';
+    removeBtn.className = 'btn btn-danger remove-service';
+    removeBtn.textContent = '-';
+    removeBtn.onclick = function() {
+        if (document.querySelectorAll('.service-row').length > 1) {
+            this.closest('.service-row').remove();
+        }
+    };
+
+    // Hide add button in previous row and show in new row
+    const prevAddBtn = document.querySelector('.service-row:last-child .add-service');
+    if (prevAddBtn) {
+        prevAddBtn.style.display = 'none';
+    }
+
+    newRow.querySelector('.add-service').style.display = 'inline-block';
+    newRow.querySelector('.add-service').onclick = addServiceRow;
+
+    // Add remove button
+    const btnContainer = newRow.querySelector('.col-md-2');
+    btnContainer.appendChild(removeBtn);
+
+    container.appendChild(newRow);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize add service button
+    const addServiceBtn = document.querySelector('.add-service');
+    if (addServiceBtn) {
+        addServiceBtn.onclick = addServiceRow;
+        addServiceBtn.style.display = 'inline-block';
+    }
+
+    const conceptInput = document.getElementById('concept');
+    const addButton = document.getElementById('addConcept');
 							const conceptsList = document.getElementById('conceptsList');
 							const conceptsInput = document.getElementById('conceptsInput');
 							let concepts = [];
 
-							// Cargar conceptos existentes si los hay
-							@if(isset($concepts) && is_array($concepts))
-								concepts = @json($concepts);
-								updateConceptsList();
-							@endif
+								@if(isset($concepts))
+									concepts = @json($concepts);
+									updateConceptsList();
+								@endif
 
 							addButton.addEventListener('click', function() {
 								const concept = conceptInput.value.trim();

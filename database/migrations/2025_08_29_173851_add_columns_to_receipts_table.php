@@ -14,7 +14,6 @@ class AddColumnsToReceiptsTable extends Migration
     public function up()
     {
         Schema::table('receipts', function (Blueprint $table) {
-            $table->integer('service_unit');
 			$table->integer('pet_id');
         });
     }

@@ -68,8 +68,10 @@ class DashboardController extends VoyagerBaseController
 			'sex' => 'required',
 			'weight' => 'required',
 			'necklace' => 'required',
-			'service_unit' => 'required',
-			'service_id' => 'required',
+			'services' => 'required|array|min:1',
+			'services.*' => 'required|exists:services,id',
+			'service_units' => 'required|array|min:1',
+			'service_units.*' => 'required|numeric|min:1',
 			'payment_method_id' => 'required',
 			'concepts' => 'required',
 		], [
@@ -84,8 +86,13 @@ class DashboardController extends VoyagerBaseController
 			'sex.required' => 'El sexo de la mascota es requerido',
 			'weight.required' => 'El peso es requerido',
 			'necklace.required' => 'El collar es requerido',
-			'service_unit.required' => 'La unidad por servicio es requerido',
-			'service_id.required' => 'El servicio es requerido',
+			'services.required' => 'Al menos un servicio es requerido',
+			'services.*.required' => 'El servicio es requerido',
+			'services.*.exists' => 'El servicio seleccionado no es válido',
+			'service_units.required' => 'Las unidades son requeridas',
+			'service_units.*.required' => 'Las unidades son requeridas',
+			'service_units.*.numeric' => 'Las unidades deben ser un número',
+			'service_units.*.min' => 'Las unidades deben ser al menos 1',
 			'payment_method_id.required' => 'El método de pago es requerido',
 			'concepts.required' => 'El concepto es requerido',
 		]);
@@ -130,21 +137,43 @@ class DashboardController extends VoyagerBaseController
 	private function handleReceipt(Request $request, int $customerId, int $petId): Receipt
 	{
 		$data = $request->only([
-			'service_id', 'payment_method_id', 'amount', 'service_unit', 'date',
+			'payment_method_id', 'date',
 		]);
 
-		$service = Service::findOrFail($data['service_id']);
-		$data['amount'] = $service->cost * intval($data['service_unit']);
-		$data['customer_id'] = $customerId;
-		$data['pet_id'] = $petId;
-		$data['user_id'] = auth()->id();
-		$data['date'] = now()->format('Y-m-d');
+		// Create the receipt first
+		$receipt = new Receipt();
+		$receipt->customer_id = $customerId;
+		$receipt->pet_id = $petId;
+		$receipt->user_id = auth()->id();
+		$receipt->date = now()->format('Y-m-d');
+		$receipt->payment_method_id = $request->payment_method_id;
+		$receipt->concepts = $request->concepts ?? null;
 
-		if ($request->filled('concepts')) {
-			$data['concepts'] = $request->concepts;
+		// Calculate total amount from all services
+		$totalAmount = 0;
+		$servicesData = [];
+
+		foreach ($request->services as $index => $serviceId) {
+			$service = Service::findOrFail($serviceId);
+			$units = $request->service_units[$index] ?? 1;
+			$subtotal = $service->cost * intval($units);
+			$totalAmount += $subtotal;
+
+			// Prepare data for pivot table
+			$servicesData[$serviceId] = [
+				'service_unit' => $units,
+				'created_at' => now(),
+				'updated_at' => now()
+			];
 		}
 
-		return Receipt::create($data);
+		$receipt->amount = $totalAmount;
+		$receipt->save();
+
+		// Attach services to receipt using the pivot table
+		$receipt->services()->attach($servicesData);
+
+		return $receipt;
 	}
 
 	private function logError(Request $request, \Exception $ex): void
